@@ -17,6 +17,7 @@ Dataset comes from a Github environment variable : AIRTABLE_API_JSON_URL (which 
 * Text	(bulk post text, paragraphs are separated by double line-breaks)
 * Photos
 
+```
 
 Photos
 0	
@@ -61,6 +62,7 @@ full
 url	"https://v5.airtableuserc…evSEu6pqw9N2YZBXzOkHW0Hw"
 width	3000
 height	3000
+```
 
 
 * Pdfs (filename of one or more PDFs, cdp-0017-01.pdf, can be empty)
