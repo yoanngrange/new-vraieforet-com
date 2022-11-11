@@ -13,9 +13,7 @@ Dataset comes from a Github environment variable : AIRTABLE_API_JSON_URL (which 
 * "Nom commun" (common name of the plant)
 * "Slug"	(SEO friendly URI)
 * "Nom latin" (latin name of the plant)
-* Keywords	(one or more singular words, can be empty)
-* Text	(bulk post text, paragraphs are separated by double line-breaks)
-* Photos
+* Photos (are 0, 1 or more photos, with the following structure)
 
 ```
 
@@ -65,8 +63,23 @@ height	3000
 ```
 
 
-* Pdfs (filename of one or more PDFs, cdp-0017-01.pdf, can be empty)
+* Type (is a list of attributes)
 
+
+```
+
+Type	
+0	"Feuillu"
+1	"Fruitier"
+2	"Haie"
+3	"Caduc"
+```
+* Strate (vegetation layer the plant belongs to)
+* Sol (type.s of supported soil types)
+* Exposition (type.s of supported sun exposures)
+* Description
+* Wikipedia (link to wikipedia artile)
+* Planche botanique (available technical illustration of the plant, if any)
 
 For the lower layer, we chose Node.JS so we could rely on a very simple, usable and open source server-side basis.
 
