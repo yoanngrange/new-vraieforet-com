@@ -10,9 +10,9 @@ Dataset comes from a Github environment variable : AIRTABLE_API_JSON_URL (which 
 
 ### Details for each column
 
-* "Nom commun" (common name of the plant)
+* "NomCommun" (common name of the plant)
 * "Slug" (SEO friendly URI)
-* "Nom latin" (latin name of the plant)
+* "NomLatin" (latin name of the plant)
 * "Photos" (are 0, 1 or more photos, with the following structure)
 
 ```
@@ -79,7 +79,7 @@ Type
 * "Exposition" (0, 1 or more type.s of supported sun exposures)
 * "Description" (richtext string)
 * "Wikipedia" (link to wikipedia artile, if any)
-* "Planche botanique" (available technical illustration of the plant, if any)
+* "PlancheBotanique" (available technical illustration of the plant, if any)
 
 For the lower layer, we chose Node.JS so we could rely on a very simple, usable and open source server-side basis.
 
