@@ -4,69 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Presse Nicoll - Aliaxis Group</title>
+        <title>Vraie Forêt</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <meta name="description" content="Actualités, communiqués de presse, photos et logos de la marque Nicoll à destination des médias." />
-        <meta name="keywords" content="nicoll, actualité, information, communiqué de presse, dossier de presse" />
-
-        <!-- Schema.org markup for Google+ -->
-        <meta itemprop="name" content="Presse Nicoll - Aliaxis Group">
-        <meta itemprop="description" content="Actualités, communiqués de presse, photos et logos de la marque Nicoll à destination des médias.">
-        <meta itemprop="image" content="img/presse-nicoll.jpg">
-
-        <!-- Twitter Card data -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@NicollFrance">
-        <meta name="twitter:title" content="Presse Nicoll - Aliaxis Group">
-        <meta name="twitter:description" content="Actualités, communiqués de presse, photos et logos de la marque Nicoll à destination des médias.">
-        <meta name="twitter:creator" content="@NicollFrance">
-        <meta name="twitter:image:src" content="img/presse-nicoll.jpg">
-
-        <!-- Open Graph data -->
-        <meta property="og:title" content="Presse Nicoll - Aliaxis Group" />
-        <meta property="og:url" content="https://presse.nicoll.fr" />
-        <meta property="og:image" content="img/presse-nicoll.jpg" />
-        <meta property="og:description" content="Actualités, communiqués de presse, photos et logos de la marque Nicoll à destination des médias." />
-        <meta property="og:site_name" content="Nicoll - Presse" />
-
-         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#d90000">
-        <meta name="msapplication-TileImage" content="mstile-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11749478-15"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-11749478-15');
-        </script>
-  
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
     </head>
     <body>
         <section class="jumbotron text-center">
             <div class="container">
-                <img class="img-fluid" src="img/presse-nicoll.png">
-                <p class="lead text-muted">Communiqués de presse, photos, vidéos, éléments graphiques... <br>Découvrez tous nos supports à destination des médias.</p>
                 <p>
-                    <a href="#communiques" class="btn btn-primary my-2">Communiqués</a>
-                    <a href="#branding" class="btn btn-secondary my-2">Nicoll & Aliaxis</a>
+                    <a href="#essences" class="btn btn-primary my-2">Essences</a>
                     <a href="#contacts" class="btn btn-secondary my-2">Contacts</a>
                 </p>
             </div>
         </section>
         <div class="container" id="home">
-            <a class="anchor" id="communiques" name="communiques"></a>
-            <h1 class="home-h1">Nicoll Presse</h1>
-            <h3>Communiqués</h3>
+            <a class="anchor" id="essences" name="essences"></a>
+            <h1 class="home-h1">Vraie Forêt</h1>
+            <h3>Essences</h3>
             <hr>
             <br>
             <div class="row">
@@ -74,12 +31,11 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
                     <a href="{{slug}}">
                         <div class="card mb-4 shadow-sm">
-                            <img class="bd-placeholder-img card-img-top" height="185px" src="attachments/jpg/small/{{firstphoto}}" focusable="false" role="img" alt="">
+                            <img class="bd-placeholder-img card-img-top" height="185px" src="{{photoUrl}}" focusable="false" role="img" alt="">
                             <div class="card-body">
-                                <h2>{{title}}</h2>
-                                <p class="card-text"><small>{{shorty}}[...]</small></p>
-                                <p class="date float-right"><small>{{date}}</small></p>
-                                {{#if keywords.length}}
+                                <h2>{{commonName}}</h2>
+                                <p class="card-text"><small>{{latinName}}[...]</small></p>
+                                {{#if types.length}}
                                 <p>
                                     {{#each keywords}}
                                     <span class="badge badge-light">{{this}}</span>
@@ -94,57 +50,6 @@
             </div>
             <br>
             <br>
-            <a class="anchor" id="branding" name="branding"></a>
-            <h3>Nicoll & Aliaxis</h3>
-            <hr>
-            <br>
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="card card-body">                   
-                        <a href="img/original/logo-nicoll-3000.jpg">
-                            <img class="mainimg" src="img/small/logo-nicoll.jpg">
-                        </a>
-                    </div>
-                </div>
-                <!--<div class="col-md-4">
-                    <div class="card card-body">
-                        <a href="img/original/logo-nicoll-aliaxis-3000.jpg">
-                            <img class="mainimg" src="img/small/logo-nicoll-aliaxis.jpg">
-                        </a>
-                    </div>
-                </div>-->
-                <div class="col-md-4">
-                    <div class="card card-body">
-                        <small>Filiale du groupe Aliaxis, un des leaders mondiaux de la fabrication et de la commercialisation de produits pour le bâtiment, l’industrie et les travaux publics, Nicoll est depuis 50 ans, l’un des premiers fabricants européens de produits en matériaux de synthèse. Spécialisé dans l’injection et l’extrusion, Nicoll double sa haute technicité d’une politique très avancée de créativité et d’innovation. Les certifications ISO 14001 et ISO 9001 version 2000 confirment l’engagement qualitatif de Nicoll et son souci permanent de préserver l’environnement.</small>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="card card-body">
-                        <a href="img/original/logo-aliaxis-3000.jpg">
-                            <img class="mainimg" src="img/small/logo-aliaxis.jpg">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-body">
-                        <a href="img/original/image-aliaxis-01-3000.jpg">
-                            <img class="mainimg" src="img/small/image-aliaxis-01.jpg">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-body">
-                        <a href="img/original/image-aliaxis-02-3000.jpg">
-                            <img class="mainimg" src="img/small/image-aliaxis-02.jpg">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
             <a class="anchor" id="contacts" name="contacts"></a>
             <h3>Contacts</h3>
             <hr>
@@ -153,34 +58,18 @@
                 <div class="col-md-4">
                     <h4>Adresse</h4>
                     <address>
-                        <p>37, rue Pierre et Marie Curie<br>49300 Cholet</p>
-                        <p>Téléphone : <a href="tel:+33241637383">02 41 63 73 83</a></p>
+                        <p>4, allée Beau Rivage<br>44200 Nantes</p>
+                        <p>Téléphone : <a href="tel:+33643677814">06 43 67 78 14</a></p>
                     </address>
                 </div>
                 <div class="col-md-4">
                     <h4>Réseaux Sociaux</h4>
                     <ul>
-                        <li><a href="https://twitter.com/NicollFrance" target="_blank">Twitter</a></li>
-                        <li><a href="https://www.facebook.com/NicollFrance/" target="_blank">Facebook</a></li>
-                        <li><a href="https://www.linkedin.com/company/nicoll-france/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.linkedin.com/company/vraieforet/" target="_blank">LinkedIn</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h4>Contacts Media</h4>
-                    <p>
-                        Carole Huet<br>
-                      +33 6 03 49 67 80<br>
-                        <a href="mailto:caroleh@oxygen-rp.com" target="_blank">caroleh@oxygen-rp.com</a><br>
-                        <a href="http://www.oxygen-rp.fr" target="_blank">Oxygen RP - Ouest</a>
-                    </p>
-                </div>
             </div>
             <br>
-            <hr>
-            <br>
-            <div class="row justify-content-center">
-                <a href="https://www.nicoll.fr" class="btn btn-primary btn-lg verybigbtn">Nicoll.fr</a>
-            </div>
         </div>
         <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
