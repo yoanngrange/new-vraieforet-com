@@ -61,7 +61,7 @@ full
 url	"https://v5.airtableuserc…evSEu6pqw9N2YZBXzOkHW0Hw"
 width	3000
 height	3000
-```
+
 
 * Pdfs (filename of one or more PDFs, cdp-0017-01.pdf, can be empty)
 
