@@ -4,7 +4,7 @@ const handlebars = require('handlebars');
 const express = require('express');
 const enforce = require('express-sslify');
 
-const url = process.env.URL_GS;
+const url = process.${{ env.MY_VARIABLE }};
 
 // Default data 
 const defaultData = JSON.parse(fs.readFileSync('public/data.json', {
