@@ -2,18 +2,7 @@
 
 ## Context
 
-This app aims at momentarily replacing the web pages that we had with our previous press relations management agency, Schilling, here :
-http://www.n-schilling.com/presse/communiques-de-presse/nicoll.html
-
-![Schilling Website](https://github.com/yoanngrange/new-vraieforet-com/blob/main/docs/img/schilling.png?raw=true "Schilling")
-
-There, were gathered a bulk of 86 press releases which respectively contained assets. These assets could be one or several PDFs and/or images. The press releases stored on Schilling website started being published in 2007. We stopped the collaboration with Schilling effectively on April 30th 2019.
-
-We retrieved the contents of the 86 posts and stored the raw data on a spreadhseet. That way, if we have to migrate it to another platform later, it will be way easier.
-
-This web app is also a good opportunity to train both Celena Riot and Eva Ory on HTML, CSS, JS, HTTP and continuous deployment.
-
-It was also a good opportunity to use that content for search engine optimisations. As soon as Schilling will have unpublished its pages, there won't be duplicate content any longer.
+Vraie Forêt SAS aims at managing its website through Airtable as a backend.
 
 ## Data
 
@@ -21,13 +10,59 @@ Dataset comes from a Github environment variable : AIRTABLE_API_JSON_URL (which 
 
 ### Details for each column
 
-* UUID	(UUID, just in case, no specifically used in the app)
-* Date	(format : dd/mm/yyyy)
-* Slug	(seo-friendly-title, formatted date and '.html' are added to the string at rebuild)
-* Title (post title)	
+* "Nom commun" (common name of the plant)
+* "Slug"	(SEO friendly URI)
+* "Nom latin" (latin name of the plant)
 * Keywords	(one or more singular words, can be empty)
 * Text	(bulk post text, paragraphs are separated by double line-breaks)
-* Photos	(filename of one or more images, i.e: cdp-0075-01.jpg, cdp-0075-02.jpg)
+* Photos
+
+
+Photos
+0	
+id	"att99DUzJ6v3mA4o1"
+width	500
+height	500
+url	"https://v5.airtableusercontent.com/v1/10/10/1668196800000/lWarhwPixtm4_bvnQ2bPGQ/V5FnvHlTkRXkNUVoGH9wPHN4q-nsBmZ1AD56KkVTCUI1b9w3NLIqrbe8zEcvvJ6XNzNeBn9CV64bRwqedDD34l2c25r6u58nt2QdEkYObDretg-aAKEVoZvXqMLqGhZL/8nVKJL9Vr9EmJ4od36zOohhTf8W8zxtzeygY3lOoAPI"
+filename	"ciste-cotonneuse_FR_500_0000399.jpg"
+size	43894
+type	"image/jpeg"
+thumbnails	
+small	
+url	"https://v5.airtableuserc…a-dCux8mFvnhS8gNQ4s1waD0"
+width	36
+height	36
+large	
+url	"https://v5.airtableuserc…GSah2AaoUScmmt-51nnqnvTo"
+width	500
+height	500
+full	
+url	"https://v5.airtableuserc…EqfOv27TZ_ifUO0QkVvXxYKs"
+width	3000
+height	3000
+1	
+id	"att5lhS4tjiSYd79o"
+width	500
+height	500
+url	"https://v5.airtableusercontent.com/v1/10/10/1668196800000/Kj5l8K1ipbQSKYiOWgcQ5w/ejzv6gHGA6MpTjYvDDOBrNudNOjsegWiuA22pSml6_xlEB03VEdDlTu3Fqvpu2SeGdwbhZ1ImjWtN6EBFQD7bTEe7izDowedVjv15a7h-EtArNtjaQTSObKMntQVfZTM/R3JA3gP4Ht79rKFv8NIVZ7uIdIuSJ4wpvxHgOCD21TA"
+filename	"ciste-cotonneuse_FR_500_0000402.jpg"
+size	50266
+type	"image/jpeg"
+thumbnails	
+small	
+url	"https://v5.airtableuserc…1huIaoDxMuKXQDHq9wTbntOs"
+width	36
+height	36
+large	
+url	"https://v5.airtableuserc…yEKrOx2ZYbQs8Sysc8OrGsJw"
+width	500
+height	500
+full	
+url	"https://v5.airtableuserc…evSEu6pqw9N2YZBXzOkHW0Hw"
+width	3000
+height	3000
+```
+
 * Pdfs (filename of one or more PDFs, cdp-0017-01.pdf, can be empty)
 
 
