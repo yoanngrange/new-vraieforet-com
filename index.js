@@ -38,17 +38,19 @@ function entryNotEmpty(entry) {
 
 function entryToPost(entry) {
 	return {
-		id: entry.gsx$id.$t,
-		title: entry.gsx$title.$t,
-		date: entry.gsx$date.$t,
-		formatteddate: `${entry.gsx$date.$t.split('/').reverse().join('-')}`,
-		keywords: (entry.gsx$keywords.$t || "").split(", ").filter(keyword => keyword !== ""),
-		text: entry.gsx$text.$t.replace(/\n/g, '<br />'),
-		shorty: entry.gsx$text.$t.substring(0, 200),
-		slug: `${entry.gsx$date.$t.split('/').reverse().join('-')}-${entry.gsx$slug.$t}.html`,
-		photos: (entry.gsx$photos.$t || "").split(", ").filter(photo => photo !== ""),
-		firstphoto: (entry.gsx$photos.$t || "").split(", ").filter(photo => photo !== "").shift(),
-		pdfs: (entry.gsx$pdfs.$t || "").split(", ").filter(pdf => pdf !== ""),
+		id: entry.id,
+		commonName: entry.fields.NomCommun.$t,
+		slug: entry.fields.slug.$t,
+		latinName: entry.fields.NomLatin.$t,
+		photos: (entry.fields.photos.$t || "").split(", ").filter(photo => photo !== ""),
+		firstPhoto: (entry.fields.photos.$t || "").split(", ").filter(photo => photo !== "").shift(),
+		types: (entry.fields.type.$t || "").split(", ").filter(type => type !== ""),
+		strate: entry.fields.strate.$t,
+		sol: (entry.fields.sol.$t || "").split(", ").filter(sol => sol !== ""),
+		exposition: (entry.fields.exposition.$t || "").split(", ").filter(exposition => exposition !== ""),
+		description: entry.fields.description.$t.replace(/\n/g, '<br />'),
+		wikipedia: entry.fields.wikipedia.$t,	
+		plancheBotanique: entry.fields.plancheBotanique.$t,
 	}
 }
 
