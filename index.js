@@ -33,7 +33,7 @@ function generateSite(url) {
 }
 
 function entryNotEmpty(entry) {
-	return entry.gsx$title.$t && entry.gsx$title.$t !== '';
+	return entry.id && entry.id !== '';
 }
 
 function entryToPost(entry) {
