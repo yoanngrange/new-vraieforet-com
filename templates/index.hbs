@@ -31,13 +31,13 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
                     <a href="{{slug}}">
                         <div class="card mb-4 shadow-sm">
-                            <img class="bd-placeholder-img card-img-top" height="185px" src="{{photoUrl}}" focusable="false" role="img" alt="">
+                            <img class="bd-placeholder-img card-img-top" height="185px" src="{{images.thumbnails.large.url.this}}" focusable="false" role="img" alt="">
                             <div class="card-body">
-                                <h2>{{commonName}}</h2>
-                                <p class="card-text"><small>{{latinName}}[...]</small></p>
+                                <h2>{{name}}</h2>
+                                <p class="card-text"><small>{{latin}}[...]</small></p>
                                 {{#if types.length}}
                                 <p>
-                                    {{#each keywords}}
+                                    {{#each types}}
                                     <span class="badge badge-light">{{this}}</span>
                                     {{/each}}
                                 </p>

@@ -15,11 +15,11 @@
     <div class="container article">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h1>{{commonName}}</h1>
+                <h1>{{name}}</h1>
                 <hr>
                 <br>
-                {{#if firstPhoto.length}}
-                <img src="attachments/jpg/original/{{firstPhoto}}" class="mainimg">
+                {{#if firstImage.length}}
+                <img src="{{firstImage.thumbnails.large.url.this}}" class="mainimg">
                 <br>
                 <br>
                 {{/if}}
@@ -42,17 +42,17 @@
                 </div>
                 {{/if}}
                 
-                {{#if photos.length}}
+                {{#if images.length}}
                 <div class="photos">
                     <h3>Photos</h3>
                     <hr>
                     <br>
                     <div class="row justify-content-center">
-                        {{#each photos}}
+                        {{#each images}}
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <a href="{{photoUrl}}" target="_blank">
-                                    <img class="bd-placeholder-img card-img-top gallery" src="{{photoUrl}}" height="165px" focusable="false" role="img" alt="">
+                                <a href="{{thumbnails.large.url.this}}" target="_blank">
+                                    <img class="bd-placeholder-img card-img-top gallery" src="{{thumbnails.large.url.this}}" height="165px" focusable="false" role="img" alt="">
                                 </a>
                                 <br>
                             </div>

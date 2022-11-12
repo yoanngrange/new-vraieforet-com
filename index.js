@@ -3,6 +3,29 @@ const axios = require('axios');
 const handlebars = require('handlebars');
 const express = require('express');
 const enforce = require('express-sslify');
+var Airtable = require('airtable');
+
+var base = new Airtable({apiKey: '${{ env.AIRTABLE_API_JSON_URL }}'}).base('appMVkRvOyMTQQuTN');
+
+base('produits-services').select({
+    // Selecting the first 3 records in Grid view:
+    maxRecords: 3,
+    view: "Grid view"
+}).eachPage(function page(records, fetchNextPage) {
+    // This function (`page`) will get called for each page of records.
+
+    records.forEach(function(record) {
+        console.log('Retrieved', record.get('Name'));
+    });
+
+    // To fetch the next page of records, call `fetchNextPage`.
+    // If there are more records, `page` will get called again.
+    // If there are no more records, `done` will get called.
+    fetchNextPage();
+
+}, function done(err) {
+    if (err) { console.error(err); return; }
+});
 
 const url = process.${{ env.AIRTABLE_API_JSON_URL }};
 
@@ -39,18 +62,18 @@ function entryNotEmpty(entry) {
 function entryToPost(entry) {
 	return {
 		id: entry.id,
-		commonName: entry.fields.NomCommun.$t,
-		slug: entry.fields.slug.$t,
-		latinName: entry.fields.NomLatin.$t,
-		photos: (entry.fields.photos.$t || "").split(", ").filter(photo => photo !== ""),
-		firstPhoto: (entry.fields.photos.$t || "").split(", ").filter(photo => photo !== "").shift(),
-		types: (entry.fields.type.$t || "").split(", ").filter(type => type !== ""),
-		strate: entry.fields.strate.$t,
-		sol: (entry.fields.sol.$t || "").split(", ").filter(sol => sol !== ""),
-		exposition: (entry.fields.exposition.$t || "").split(", ").filter(exposition => exposition !== ""),
-		description: entry.fields.description.$t.replace(/\n/g, '<br />'),
-		wikipedia: entry.fields.wikipedia.$t,	
-		plancheBotanique: entry.fields.plancheBotanique.$t,
+		name: entry.fields.Name.$t,
+		slug: entry.fields.Slug.$t,
+		latin: entry.fields.Latin.$t,
+		images: (entry.fields.Images.$t || "").split(", ").filter(Images => Images !== ""),
+		firstImage: (entry.fields.Images.$t || "").split(", ").filter(Images => Images !== "").shift(),
+		types: (entry.fields.Type.$t || "").split(", ").filter(Type => Type !== ""),
+		stratum: entry.fields.Stratum.$t,
+		soil: (entry.fields.Soil.$t || "").split(", ").filter(Soil => Soil !== ""),
+		exposure: (entry.fields.Exposure.$t || "").split(", ").filter(Exposure => Exposure !== ""),
+		description: entry.fields.Description.$t.replace(/\n/g, '<br />'),
+		wikipedia: entry.fields.Wikipedia.$t,	
+		techIllustration: entry.fields.TechIllustration.$t,
 	}
 }
 
