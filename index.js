@@ -4,7 +4,7 @@ const handlebars = require('handlebars');
 const express = require('express');
 const enforce = require('express-sslify');
 
-const url = process.${{ env.MY_VARIABLE }};
+const url = process.${{ env.AIRTABLE_API_JSON_URL }};
 
 // Default data 
 const defaultData = JSON.parse(fs.readFileSync('public/data.json', {
