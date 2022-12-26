@@ -1,0 +1,28 @@
+name: Deploy gh-pages
+on:
+  push:
+    branches: [main]
+env:
+  AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+  AIRTABLE_BASE: ${{ secrets.AIRTABLE_BASE }}
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm install
+      - run: npm start
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
