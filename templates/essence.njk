@@ -1,0 +1,59 @@
+{% extends "_base.njk" %} 
+{% set essence = row %} 
+
+{% block content %}
+<div>
+  <h1>{{essence.latin}}, {{essence.name}}</h1>
+  <!--liste-->
+  {% for image in essence.images%}
+  <img
+    src="{{image.thumbnails.large.url}}"
+    loading="lazy"
+  />
+  {% endfor %}
+  <!--fin de liste-->
+  {% if essence.types %}
+  <p>
+    Caractéristiques :
+    <!--liste-->
+    {% for type in essence.types %}
+    <span>{{type}}</span>{{ "," if not loop.last }}
+    {% endfor %}
+    <!--fin de liste-->
+  </p>
+  {% endif %}
+  {% if essence.description %}
+  <p>{{essence.description}}</p>
+  {% endif %}
+  {% if essence.stratum %}
+  <p>Strate : {{essence.stratum}}</p>
+  {% endif %}
+  {% if essence.soils %}
+  <p>Sol : 
+    {% for soil in essence.soils %}
+    <span>{{soil}}</span>{{ "," if not loop.last }}
+    {% endfor %}
+  </p>
+  {% endif %}
+  {% if essence.exposures %}
+  <p>Expositions supportées : 
+    {% for exposure in essence.exposures %}
+    <span>{{exposure}}</span>{{ "," if not loop.last }}
+    {% endfor %}
+  </p>
+  {% endif %}
+  {% if essence.wikipedia %}
+  <p><a href="{{essence.wikipedia}}">Wikipedia</a></p>
+  {% endif %}
+  <br />
+  <hr />
+  <br />
+  {% if essence.techIllustration %}
+  <p>Planche botanique :</p>
+  <img
+    src="{{essence.techIllustration.thumbnails.large.url}}"
+    loading="lazy"
+  />
+  {% endif %}
+</div>
+{% endblock %}

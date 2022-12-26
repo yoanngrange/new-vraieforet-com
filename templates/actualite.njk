@@ -1,0 +1,25 @@
+{% extends "_base.njk" %} 
+{% set actualite = row %}
+
+{% block content %}
+<div>
+  <h1>{{actualite.name}}</h1>
+  <p>Publié le : {{actualite.date}}</p>
+  {% if actualite.image %}
+  <img
+    src="{{actualite.image.thumbnails.large.url}}"
+    loading="lazy"
+  />
+  {% endif %}
+  {% if actualite.header %}
+  <p>{{actualite.header}}</p>
+  {% endif %}
+  {% if actualite.content %}
+  <p>{{actualite.content}}</p>
+  {% endif %}
+  {% if actualite.youtube %}
+  <p><a href="{{actualite.youtube}}">Youtube</a></p>
+  {% endif %}
+</div>
+
+{% endblock %}

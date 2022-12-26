@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      {% if meta.title %}
+      {{meta.title}} - Vraie Forêt - Plantation de forêt, micro-forêt, haie & verger
+      {% else %}
+      Vraie Forêt - Plantation de forêt, micro-forêt, haie & verger
+      {% endif %}
+    </title>
+    {% if meta.description %}
+    <meta name="description" content="{{meta.description}}" />
+    {% endif %}
+    {% if meta.keywords %}
+    <meta name="keywords" content="{{meta.keywords}}" />
+    {% endif %}
+  </head>
+  <body>
+    {% include "_header.njk" %} 
+    
+    {% block content %} 
+      This is the default content 
+    {% endblock %} 
+
+    {% include "_footer.njk" %}
+  </body>
+</html>

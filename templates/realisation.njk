@@ -1,0 +1,26 @@
+{% extends "_base.njk" %} 
+{% set realisation = row %}
+
+{% block content %}
+<div>
+  <h1>{{realisation.name}}</h1>
+  <p>Chantier réalisé le : {{realisation.date}}</p>
+  <p>Géolocalisation : {{realisation.department}}</p>
+  <img
+    src="{{realisation.photo.thumbnails.large.url}}"
+    loading="lazy"
+  />
+  {% if realisation.context %}
+  <p>Contexte : {{realisation.context}}</p>
+  {% endif %}
+  {% if realisation.testimonial %}
+  <p>Témoignage client : {{realisation.testimonial}}</p>
+  {% endif %}
+  <p>{{realisation.authors}}</p>
+  <p>Quantité ou surface : {{realisation.quantitySurface}}</p>
+  <p>Nombre d'essences ou de variétés : {{realisation.species}}</p>
+  <p>Type de sol : {{realisation.soil}}</p>
+  <p>pH : {{realisation.ph}}</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "_base.njk" %} 
+{% block content %}
+<h1>Questions fréquentes</h1>
+
+{% for question in questionsFrequentes %}
+<div>
+    <h2>{{question.question}}</h2>
+    <p>{{question.answer}}</p>
+</div>
+{% else %}
+<p>Aucune question actuellement référencée.</p>
+{% endfor %} 
+
+{% endblock %}

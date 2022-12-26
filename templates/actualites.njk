@@ -1,0 +1,16 @@
+{% extends "_base.njk" %} 
+{% block content %}
+<h1>Actualités</h1>
+{% for actualite in actualites %}
+<a href="/actualites/{{actualite.slug}}.html">
+  <div>
+    <h3>{{actualite.name}}</h3>
+    <img src="{{actualite.image.thumbnails.large.url}}" loading="lazy" />
+    <p>Publié le :{{ actualite.date}}</p>
+  </div>
+</a>
+{% else %}
+<p>Aucune actualité actuellement référencée.</p>
+{% endfor %} 
+
+ {% endblock %}

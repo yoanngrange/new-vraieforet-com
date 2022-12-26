@@ -1,0 +1,22 @@
+{% extends "_base.njk" %} 
+{% set service = row %}
+
+{% block content %}
+<div>
+  <h1>{{service.name}}</h1>
+  {% if service.image %}
+  <img
+    src="{{service.image.thumbnails.large.url}}"
+    loading="lazy"
+  />
+  {% endif %}
+  {% if service.text %}
+  <p>Contexte : {{service.text}}</p>
+  {% endif %}
+  <p>
+    {% for target in service.targets %}
+    <span>{{target}}</span>{{ "," if not loop.last }}
+    {% endfor %}
+  </p>
+</div>
+{% endblock %}

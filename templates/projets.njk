@@ -1,0 +1,25 @@
+{% extends "_base.njk" %} 
+{% block content %}
+<h1>Projets</h1>
+{% for projet in projets %}
+<div>
+  <h3>{{projet.name}}</h3>
+  
+  {% if projet.image %}
+  <img
+    src="{{projet.image.thumbnails.large.url}}"
+    loading="lazy"
+  />
+  {% endif %}
+
+  <p>{{projet.text}}</p>
+
+  {% if projet.link %}
+  <p><a href="{{projet.link}}">{{projet.call}}</a></p>
+  {% endif %}
+</div>
+{% else %}
+<p>Aucun projet actuellement référencé.</p>
+{% endfor %} 
+
+{% endblock %}

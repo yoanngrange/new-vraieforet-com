@@ -1,0 +1,29 @@
+{% extends "_base.njk" %} 
+{% block content %}
+<h1>Actualités</h1>
+<h1>Zones d'intervention</h1>
+<h2>Loire-Atlantique (44)</h2>
+<p>
+{% for commune in loireAtlantique %}
+  <a href="/plantations/{{commune.slug}}.html">{{commune.name}}</a>,
+{% endfor %}
+</p>
+<h2>Maine et Loire (49)</h2>
+<p>
+{% for commune in maineEtLoire %}
+  <a href="/plantations/{{commune.slug}}.html">{{commune.name}}</a>,
+{% endfor %}
+</p>
+<h2>Vendée (85)</h2>
+<p>
+{% for commune in vendee %}
+  <a href="/plantations/{{commune.slug}}.html">{{commune.name}}</a>,
+{% endfor %}
+</p>
+<h2>Île et Vilaine (35)</h2>
+<p>
+{% for commune in ileEtVilaine %}
+  <a href="/plantations/{{commune.slug}}.html">{{commune.name}}</a>,
+{% endfor %}
+</p>
+{% endblock %}

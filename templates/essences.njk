@@ -1,0 +1,23 @@
+{% extends "_base.njk" %} 
+{% block content %}
+<h1>Essences</h1>
+
+{% for essenceGroup in essencesGroup %}
+<h3>{{essenceGroup.letter}}</h3>
+<ul>
+  {% for essence in essenceGroup.essences %}
+  <li>
+    <a href="/essences/{{essence.slug}}.html">
+      {% if essence.images %}
+      <img
+        src="{{essence.images[0].thumbnails.large.url}}"
+        loading="lazy"
+      />
+      {% endif %}
+      <h2>{{essence.latin}}, {{essence.name}}</h2>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}
+{% endblock %}

@@ -1,133 +1,195 @@
-const fs = require('fs');
-const axios = require('axios');
-const handlebars = require('handlebars');
-const express = require('express');
-const enforce = require('express-sslify');
-var Airtable = require('airtable');
+import "./env.js";
 
-var base = new Airtable({apiKey: '${{ env.AIRTABLE_API_JSON_URL }}'}).base('appMVkRvOyMTQQuTN');
+import express from "express";
+import {
+  actualites,
+  communes,
+  essences,
+  essencesGroup,
+  methodes,
+  projets,
+  questionsFrequentes,
+  realisations,
+  services,
+} from "./data.js";
+import { renderFiles } from "./render.js";
 
-base('produits-services').select({
-    // Selecting the first 3 records in Grid view:
-    maxRecords: 3,
-    view: "Grid view"
-}).eachPage(function page(records, fetchNextPage) {
-    // This function (`page`) will get called for each page of records.
+const files = [
+  {
+    templateFile: "index.njk",
+    distFile: "index.html",
+    meta: () => ({
+      title: "Accueil",
+    }),
+    datasource: {
+      services: services.withConstraints({
+        sort: [{ field: "Order", direction: "asc" }],
+      }),
+      methodes: methodes.withConstraints({
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
+      realisations: realisations.withConstraints({
+        limit: 6,
+        sort: [{ field: "Date", direction: "desc" }],
+      }),
+      questionsFrequentes: questionsFrequentes.withConstraints({
+        limit: 3,
+        sort: [{ field: "Weight", direction: "desc" }],
+      }),
+      actualites: actualites.withConstraints({
+        limit: 3,
+        sort: [{ field: "Date", direction: "desc" }],
+      }),
+    },
+  },
+  {
+    templateFile: "actualites.njk",
+    distFile: "actualites/index.html",
+    meta: () => ({
+      title: "Actualités",
+    }),
+    datasource: {
+      actualites: actualites.withConstraints({
+        sort: [{ field: "Date", direction: "desc" }],
+      }),
+    },
+  },
+  {
+    templateFile: "actualite.njk",
+    distFile: (slug) => `actualites/${slug}.html`,
+    meta: (actualite) => ({
+      title: actualite,
+    }),
+    multiPages: true,
+    datasource: {
+      rows: actualites,
+    },
+  },
+  {
+    templateFile: "commune.njk",
+    distFile: (slug) => `plantations/${slug}.html`,
+    meta: (commune) => ({
+      title: commune,
+    }),
+    multiPages: true,
+    datasource: {
+      rows: communes,
+    },
+  },
+  {
+    templateFile: "communes.njk",
+    distFile: "communes/index.html",
+    meta: () => ({
+      title: "Communes",
+    }),
+    datasource: {
+      loireAtlantique: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+      }),
+      vendee: communes.withConstraints({
+        filterByFormula: "{Department} = '85'",
+      }),
+      maineEtLoire: communes.withConstraints({
+        filterByFormula: "{Department} = '49'",
+      }),
+      ileEtVilaine: communes.withConstraints({
+        filterByFormula: "{Department} = '35'",
+      }),
+    },
+  },
+  {
+    templateFile: "essence.njk",
+    meta: (essence) => ({
+      title: essence,
+    }),
+    distFile: (slug) => `essences/${slug}.html`,
+    multiPages: true,
+    datasource: {
+      rows: essences,
+    },
+  },
+  {
+    templateFile: "essences.njk",
+    distFile: "essences/index.html",
+    meta: () => ({
+      title: "Essences",
+    }),
+    datasource: {
+      essencesGroup: essencesGroup.withConstraints({
+        filterByFormula: "NOT({Latin} = '')",
+        sort: [{ field: "Latin", direction: "asc" }],
+      }),
+    },
+  },
+  {
+    templateFile: "questions-frequentes.njk",
+    distFile: "questions-frequentes/index.html",
+    meta: () => ({
+      title: "Questions fréquentes",
+    }),
+    datasource: {
+      questionsFrequentes: questionsFrequentes.withConstraints({
+        sort: [{ field: "Weight", direction: "desc" }],
+      }),
+    },
+  },
+  {
+    templateFile: "projets.njk",
+    distFile: "projets/index.html",
+    meta: () => ({
+      title: "Projets",
+    }),
+    datasource: {
+      projets: projets.withConstraints({
+        sort: [{ field: "Order", direction: "asc" }],
+      }),
+    },
+  },
+  {
+    templateFile: "realisations.njk",
+    distFile: "realisations/index.html",
+    meta: () => ({
+      title: "Réalisations",
+    }),
+    datasource: {
+      realisations: realisations.withConstraints({
+        sort: [{ field: "Date", direction: "desc" }],
+      }),
+    },
+  },
+  {
+    templateFile: "realisation.njk",
+    distFile: (slug) => `realisations/${slug}.html`,
+    meta: (realisation) => ({
+      title: realisation,
+    }),
+    multiPages: true,
+    datasource: {
+      rows: realisations,
+    },
+  },
+  {
+    templateFile: "service.njk",
+    distFile: (slug) => `services/${slug}.html`,
+    meta: (service) => ({
+      title: service,
+    }),
+    multiPages: true,
+    datasource: {
+      rows: services,
+    },
+  },
+];
 
-    records.forEach(function(record) {
-        console.log('Retrieved', record.get('Name'));
-    });
-
-    // To fetch the next page of records, call `fetchNextPage`.
-    // If there are more records, `page` will get called again.
-    // If there are no more records, `done` will get called.
-    fetchNextPage();
-
-}, function done(err) {
-    if (err) { console.error(err); return; }
-});
-
-const url = process.${{ env.AIRTABLE_API_JSON_URL }};
-
-// Default data 
-const defaultData = JSON.parse(fs.readFileSync('public/data.json', {
-	encoding: 'utf8'
-}));
-
-// Read template for Handlebar
-const indexHtmlTemplate = fs.readFileSync('templates/index.hbs', {
-	encoding: 'utf8'
-});
-const postHtmlTemplate = fs.readFileSync('templates/post.hbs', {
-	encoding: 'utf8'
-});
-
-const handlebarCompiledIndexTemplate = handlebars.compile(indexHtmlTemplate);
-const handlebarCompiledPostTemplate = handlebars.compile(postHtmlTemplate);
-
-function generateSite(url) {
-	return axios.get(url)
-	.then(response => response.data.feed.entry)
-	.catch(err => defaultData.data.feed.entry)
-	.then(entries => entries.filter(entryNotEmpty))
-	.then(entries => entries.reverse().map(entryToPost))
-	.then(posts => generateHtmls(posts))
-	.then(htmls => writeFiles(htmls))
-}
-
-function entryNotEmpty(entry) {
-	return entry.id && entry.id !== '';
-}
-
-function entryToPost(entry) {
-	return {
-		id: entry.id,
-		name: entry.fields.Name.$t,
-		slug: entry.fields.Slug.$t,
-		latin: entry.fields.Latin.$t,
-		images: (entry.fields.Images.$t || "").split(", ").filter(Images => Images !== ""),
-		firstImage: (entry.fields.Images.$t || "").split(", ").filter(Images => Images !== "").shift(),
-		types: (entry.fields.Type.$t || "").split(", ").filter(Type => Type !== ""),
-		stratum: entry.fields.Stratum.$t,
-		soil: (entry.fields.Soil.$t || "").split(", ").filter(Soil => Soil !== ""),
-		exposure: (entry.fields.Exposure.$t || "").split(", ").filter(Exposure => Exposure !== ""),
-		description: entry.fields.Description.$t.replace(/\n/g, '<br />'),
-		wikipedia: entry.fields.Wikipedia.$t,	
-		techIllustration: entry.fields.TechIllustration.$t,
-	}
-}
-
-function generateHtmls(posts) {
-	const indexHtml = generateIndex(posts);
-	const postHtmls = generatePosts(posts);
-	
-	return postHtmls.concat(indexHtml);
-}
-
-function writeFiles(htmls) {
-	htmls.forEach(html => {
-		fs.writeFileSync(`public/${html.fileName}`, html.content, {
-			encoding: 'utf8'
-		})
-	});
-}
-
-function generateIndex(posts) {
-	const context = {
-		posts: posts
-	}
-	return {
-		fileName: 'index.html',
-		content: handlebarCompiledIndexTemplate(context)
-	};
-}
-
-function generatePosts(posts) {
-	return posts.map(generatePost)
-}
-
-function generatePost(post) {
-	const context = post
-	return {
-		fileName: post.slug,
-		content: handlebarCompiledPostTemplate(context)
-	}
-}
-
-generateSite(url);
+renderFiles(files).then(() => console.log("done"));
 
 const app = express();
-if (process.env.NODE_ENV === 'production') {
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
-}
-app.use(express.static('public'));
+app.use(express.static("dist"));
 
-app.get('/rebuild', function (req, res) {
-	generateSite(url)
-		.then(() => res.send('regen done'));
-	
+app.get("/rebuild", function (req, res) {
+  renderFiles(files).then(() => res.send("done"));
 });
 
 app.listen(process.env.PORT || 8080, () => {
-	console.log(`i'm up!`);
-})
+  console.log(`i'm up!`);
+});
