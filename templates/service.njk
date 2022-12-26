@@ -11,7 +11,11 @@
   />
   {% endif %}
   {% if service.text %}
-  <p>Contexte : {{service.text}}</p>
+  <p>Contexte : 
+    {% markdown %}
+    {{service.text}}
+    {% endmarkdown %}
+  </p>
   {% endif %}
   <p>
     {% for target in service.targets %}

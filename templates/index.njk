@@ -13,7 +13,10 @@
       loading="lazy"
     />
     {% endif %}
-    <p>{{service.text | truncate(240, true, "...")}} </p>
+    <p>
+      {% markdown %}
+      {{service.text | truncate(240, true, "...")}} </p>
+      {% endmarkdown %}
     <p>
       {% for target in service.targets %}
       <span>{{target}}</span>{{ "," if not loop.last }}
@@ -36,7 +39,11 @@
     loading="lazy"
   />
   {% endif %}
-  <p>{{methode.text}}</p>
+  <p>
+    {% markdown %}
+    {{methode.text}}
+    {% endmarkdown %}
+  </p>
 </div>
 {% endfor %}
 <br />
@@ -67,7 +74,11 @@
 {% for question in questionsFrequentes %}
 <div>
   <h4>{{question.question}}</h4>
-  <p>{{question.answer}}</p>
+  <p>
+    {% markdown %}
+    {{question.answer}}
+    {% endmarkdown %}
+  </p>
 </div>
 {% endfor %}
 <p>

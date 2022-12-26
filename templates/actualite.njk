@@ -15,7 +15,11 @@
   <p>{{actualite.header}}</p>
   {% endif %}
   {% if actualite.content %}
-  <p>{{actualite.content}}</p>
+  <p>
+  {% markdown %}
+    {{actualite.content}}
+  {% endmarkdown %}
+  </p>
   {% endif %}
   {% if actualite.youtube %}
   <p><a href="{{actualite.youtube}}">Youtube</a></p>

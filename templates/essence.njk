@@ -23,7 +23,11 @@
   </p>
   {% endif %}
   {% if essence.description %}
-  <p>{{essence.description}}</p>
+  <p>
+    {% markdown %}
+    {{essence.description}}
+    {% endmarkdown %}
+    </p>
   {% endif %}
   {% if essence.stratum %}
   <p>Strate : {{essence.stratum}}</p>

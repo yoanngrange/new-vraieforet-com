@@ -11,10 +11,18 @@
     loading="lazy"
   />
   {% if realisation.context %}
-  <p>Contexte : {{realisation.context}}</p>
+  <p>Contexte : 
+    {% markdown %}
+    {{realisation.context}}
+    {% endmarkdown %}
+  </p>
   {% endif %}
   {% if realisation.testimonial %}
-  <p>Témoignage client : {{realisation.testimonial}}</p>
+  <p>Témoignage client : 
+    {% markdown %}
+    {{realisation.testimonial}}
+    {% endmarkdown %}
+  </p>
   {% endif %}
   <p>{{realisation.authors}}</p>
   <p>Quantité ou surface : {{realisation.quantitySurface}}</p>

@@ -1,10 +1,13 @@
 import path from "path";
 import { existsSync, mkdirSync, writeFileSync } from "fs";
 import nunjucks from "nunjucks";
+import njmarkdown from "nunjucks-markdown";
+import * as marked from "marked";
 
 const __dirname = path.resolve();
 
-nunjucks.configure("templates", { autoescape: true });
+const env = nunjucks.configure("templates", { autoescape: true });
+njmarkdown.register(env, marked.parse);
 
 export async function renderFiles(files) {
   return Promise.all(

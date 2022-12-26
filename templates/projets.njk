@@ -12,7 +12,11 @@
   />
   {% endif %}
 
-  <p>{{projet.text}}</p>
+  <p>
+    {% markdown %}
+    {{projet.text}}
+    {% endmarkdown %}
+  </p>
 
   {% if projet.link %}
   <p><a href="{{projet.link}}">{{projet.call}}</a></p>
