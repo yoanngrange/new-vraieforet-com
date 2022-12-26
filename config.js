@@ -18,6 +18,10 @@ export const files = [
       title: "Accueil",
     }),
     datasource: {
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
       services: services.withConstraints({
         sort: [{ field: "Order", direction: "asc" }],
       }),
