@@ -40,7 +40,7 @@
 {% if footerCommunes %}
 <p>
   {% for commune in footerCommunes %}
-  <a href="/plantations/{{commune.slug}}">{{commune.name}}</a>{{ "," if not loop.last }}
+  <a href="/plantations/{{commune.slug}}">{{commune.name}}.html</a>{{ "," if not loop.last }}
   {% endfor %}
 </p>
 {% endif %}
