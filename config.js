@@ -52,6 +52,10 @@ export const files = [
       actualites: actualites.withConstraints({
         sort: [{ field: "Date", direction: "desc" }],
       }),
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -63,6 +67,10 @@ export const files = [
     multiPages: true,
     datasource: {
       rows: actualites,
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -74,6 +82,10 @@ export const files = [
     multiPages: true,
     datasource: {
       rows: communes,
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -95,6 +107,10 @@ export const files = [
       ileEtVilaine: communes.withConstraints({
         filterByFormula: "{Department} = '35'",
       }),
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -106,6 +122,10 @@ export const files = [
     multiPages: true,
     datasource: {
       rows: essences,
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -119,6 +139,10 @@ export const files = [
         filterByFormula: "NOT({Latin} = '')",
         sort: [{ field: "Latin", direction: "asc" }],
       }),
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -130,6 +154,10 @@ export const files = [
     datasource: {
       questionsFrequentes: questionsFrequentes.withConstraints({
         sort: [{ field: "Weight", direction: "desc" }],
+      }),
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
       }),
     },
   },
@@ -143,6 +171,10 @@ export const files = [
       projets: projets.withConstraints({
         sort: [{ field: "Order", direction: "asc" }],
       }),
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -155,6 +187,10 @@ export const files = [
       realisations: realisations.withConstraints({
         sort: [{ field: "Date", direction: "desc" }],
       }),
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -166,6 +202,10 @@ export const files = [
     multiPages: true,
     datasource: {
       rows: realisations,
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
   {
@@ -177,6 +217,10 @@ export const files = [
     multiPages: true,
     datasource: {
       rows: services,
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
+      }),
     },
   },
 ];
