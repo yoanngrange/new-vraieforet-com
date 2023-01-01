@@ -40,28 +40,29 @@
 <h3>Méthode</h3>
 
 <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
-{% for methode in methodes %}
-<div class="col">
-  <div class="card h-100">
-    <h4 class="card-title">{{methode.name}}</h4>
-    {% if methode.image %}
-    <img
-      class="card-img-top"
-      src="{{methode.image.thumbnails.large.url}}"
-      loading="lazy"
-      alt="{{methode.name}}"
-    />
-    {% endif %}
-    <div class="card-body">
-      <p>
-        {% markdown %}
-        {{methode.text}}
-        {% endmarkdown %}
-      </p>
+  {% for methode in methodes %}
+  <div class="col">
+    <div class="card h-100">
+      <h4 class="card-title">{{methode.name}}</h4>
+      {% if methode.image %}
+      <img
+        class="card-img-top"
+        src="{{methode.image.thumbnails.large.url}}"
+        loading="lazy"
+        alt="{{methode.name}}"
+      />
+      {% endif %}
+      <div class="card-body">
+        <p>
+          {% markdown %}
+          {{methode.text}}
+          {% endmarkdown %}
+        </p>
+      </div>
     </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
 <br />
 <hr />
 <br />
