@@ -159,21 +159,28 @@
   <br>
 
   <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
-  {% for actualite in actualites %}
-  <a href="/actualites/{{actualite.slug}}.html">
-    <div class="col">
-      <h3>{{actualite.name}}</h3>
-      {% if actualite.image %}
-      <img
-        src="{{actualite.image.thumbnails.large.url}}"
-        loading="lazy"
-      />
-      {% endif %}
-      <p>Publié le : {{actualite.date}}</p>
-    </div>
-  </a>
-  {% endfor %}
-  <p><a href="/actualites">Voir toutes les actualités &raquo;</a></p>
+    {% for actualite in actualites %}
+    <a href="/actualites/{{actualite.slug}}.html">
+      <div class="col">
+        <div class="card">
+          <h3 class="card-title">{{actualite.name}}</h3>
+          {% if actualite.image %}
+          <img
+            class="card-img-top"
+            src="{{actualite.image.thumbnails.large.url}}"
+            loading="lazy"
+            alt="{{actualite.name}}"
+          />
+          {% endif %}
+          <p>Publié le : {{actualite.date}}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+    <p>
+      <a  class="btn btn-lg btn-success" href="/actualites">Voir toutes les actualités &raquo;</a>
+    </p>
+  </div>
 
 </div>
 {% endblock %}
