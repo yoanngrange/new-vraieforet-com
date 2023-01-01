@@ -115,7 +115,7 @@ export const files = [
   {
     templateFile: "essence.njk",
     meta: (essence) => ({
-      title: essence." - Essence d'arbre - Fiche botanique",
+      title: essence,
     }),
     distFile: (slug) => `essences/${slug}.html`,
     multiPages: true,
