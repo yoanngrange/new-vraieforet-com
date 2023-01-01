@@ -83,16 +83,20 @@
   </p>
   {% for realisation in realisations %}
   <a href="/realisations/{{realisation.slug}}.html">
-    <div>
-      <h4>{{realisation.name}}</h4>
-      {% if realisation.photo %}
-      <img
-        src="{{realisation.photo.thumbnails.large.url}}"
-        loading="lazy"
-      />
-      {% endif %}
-      <p>Chantier réalisé le : {{realisation.date}}</p>
-      <p>{{realisation.department}}</p>
+    <div class="col">
+      <div class="card h-100">
+        <h4 class="card-title">{{realisation.name}}</h4>
+        {% if realisation.photo %}
+        <img
+          class="card-img-top"
+          src="{{realisation.photo.thumbnails.large.url}}"
+          loading="lazy"
+          alt="{{realisation.name}}"
+        />
+        {% endif %}
+        <p>Chantier réalisé le : {{realisation.date}}</p>
+        <p>Département : {{realisation.department}}</p>
+      </div>    
     </div>
   </a>
   {% endfor %}
@@ -151,9 +155,13 @@
       </div>
     </div>
   </div>
+  <br>
+  <br>
+
+  <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
   {% for actualite in actualites %}
   <a href="/actualites/{{actualite.slug}}.html">
-    <div>
+    <div class="col">
       <h3>{{actualite.name}}</h3>
       {% if actualite.image %}
       <img
