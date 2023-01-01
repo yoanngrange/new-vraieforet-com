@@ -1,5 +1,7 @@
 {% extends "_base.njk" %} 
 {% block content %}
+<div class="container">
+
 <h1>Essences</h1>
 
 {% for essenceGroup in essencesGroup %}
@@ -20,4 +22,6 @@
   {% endfor %}
 </ul>
 {% endfor %}
+</div>
+
 {% endblock %}

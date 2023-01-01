@@ -1,6 +1,10 @@
 {% extends "_base.njk" %} 
+
 {% block content %}
+<div class="container">
+
 <h1>Actualités</h1>
+
 {% for actualite in actualites %}
 <a href="/actualites/{{actualite.slug}}.html">
   <div>
@@ -12,5 +16,6 @@
 {% else %}
 <p>Aucune actualité actuellement référencée.</p>
 {% endfor %} 
+</div>
 
- {% endblock %}
+{% endblock %}

@@ -1,6 +1,10 @@
 {% extends "_base.njk" %} 
+
 {% block content %}
+<div class="container">
+
 <h1>Actualités</h1>
+
 <h1>Zones d'intervention</h1>
 <h2>Loire-Atlantique (44)</h2>
 <p>
@@ -26,4 +30,6 @@
   <a href="/plantations/{{commune.slug}}.html">{{commune.name}}</a>,
 {% endfor %}
 </p>
+</div>
+
 {% endblock %}

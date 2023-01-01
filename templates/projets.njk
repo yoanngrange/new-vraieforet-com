@@ -1,5 +1,7 @@
 {% extends "_base.njk" %} 
 {% block content %}
+<div class="container">
+
 <h1>Projets</h1>
 {% for projet in projets %}
 <div>
@@ -26,4 +28,5 @@
 <p>Aucun projet actuellement référencé.</p>
 {% endfor %} 
 
+</div>
 {% endblock %}
