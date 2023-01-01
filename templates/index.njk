@@ -81,25 +81,27 @@
   <p class="text-center">
     <a class="btn btn-lg btn-success" href="/realisations">Voir toutes les réalisations &raquo;</a>
   </p>
-  {% for realisation in realisations %}
-  <a href="/realisations/{{realisation.slug}}.html">
-    <div class="col">
-      <div class="card h-100">
-        <h4 class="card-title">{{realisation.name}}</h4>
-        {% if realisation.photo %}
-        <img
-          class="card-img-top"
-          src="{{realisation.photo.thumbnails.large.url}}"
-          loading="lazy"
-          alt="{{realisation.name}}"
-        />
-        {% endif %}
-        <p>Chantier réalisé le : {{realisation.date}}</p>
-        <p>Département : {{realisation.department}}</p>
-      </div>    
-    </div>
-  </a>
-  {% endfor %}
+  <div class="row">
+    {% for realisation in realisations %}
+    <a href="/realisations/{{realisation.slug}}.html">
+      <div class="col">
+        <div class="card h-100">
+          <h4 class="card-title">{{realisation.name}}</h4>
+          {% if realisation.photo %}
+          <img
+            class="card-img-top"
+            src="{{realisation.photo.thumbnails.large.url}}"
+            loading="lazy"
+            alt="{{realisation.name}}"
+          />
+          {% endif %}
+          <p>Chantier réalisé le : {{realisation.date}}</p>
+          <p>Département : {{realisation.department}}</p>
+        </div>    
+      </div>
+    </a>
+    {% endfor %}
+  </div>
   
   <br />
   <hr />
