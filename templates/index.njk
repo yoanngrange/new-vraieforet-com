@@ -1,126 +1,135 @@
 {% extends "_base.njk" %} 
 
 {% block content %}
-<h3>Services</h3>
+<div class="container">
+  <h1>Vraie Forêt</h1>
+  <h2>Plantation de forêt, micro-forêt, haie & verger</h2>
+  <br>
+  <hr>
+  <br>
+  <h3>Services</h3>
 
-<div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
-  {% for service in services %}
-  <div class="col">
-    <a href="/services/{{service.slug}}.html">
+  <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
+    {% for service in services %}
+    <div class="col">
+      <a href="/services/{{service.slug}}.html">
+        <div class="card h-100">
+          {% if service.image %}
+          <img
+            class="card-img-top"
+            src="{{service.image.thumbnails.large.url}}"
+            loading="lazy"
+            alt="{{service.name}}"
+          />
+          {% endif %}
+          <div class="card-body">
+            <h4 class="card-title">{{service.name}}</h4>
+            <p class="card-text">
+              {% markdown %}
+              {{service.text | truncate(240, true, "...")}} </p>
+              {% endmarkdown %}
+            <p>
+              {% for target in service.targets %}
+              <span class="badge bg-secondary">{{target}}</span>{{ "," if not loop.last }}
+              {% endfor %}
+            </p>
+            <button type="button" class="btn btn-success">En savoir plus &raquo;</button>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <br />
+  <hr />
+  <br />
+
+  <h3>Méthode</h3>
+
+  <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
+    {% for methode in methodes %}
+    <div class="col">
       <div class="card h-100">
-        {% if service.image %}
+        <h4 class="card-title">{{methode.name}}</h4>
+        {% if methode.image %}
         <img
           class="card-img-top"
-          src="{{service.image.thumbnails.large.url}}"
+          src="{{methode.image.thumbnails.large.url}}"
           loading="lazy"
-          alt="{{service.name}}"
+          alt="{{methode.name}}"
         />
         {% endif %}
         <div class="card-body">
-          <h4 class="card-title">{{service.name}}</h4>
-          <p class="card-text">
-            {% markdown %}
-            {{service.text | truncate(240, true, "...")}} </p>
-            {% endmarkdown %}
           <p>
-            {% for target in service.targets %}
-            <span class="badge bg-secondary">{{target}}</span>{{ "," if not loop.last }}
-            {% endfor %}
+            {% markdown %}
+            {{methode.text}}
+            {% endmarkdown %}
           </p>
-          <button type="button" class="btn btn-success">En savoir plus &raquo;</button>
         </div>
       </div>
-    </a>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
-<br />
-<hr />
-<br />
-<h3>Méthode</h3>
+  <br />
+  <hr />
+  <br />
+  <h3>Réalisations</h3>
+  <p><a href="/realisations">Voir toutes les réalisations &raquo;</a></p>
 
-<div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
-  {% for methode in methodes %}
-  <div class="col">
-    <div class="card h-100">
-      <h4 class="card-title">{{methode.name}}</h4>
-      {% if methode.image %}
+  {% for realisation in realisations %}
+  <a href="/realisations/{{realisation.slug}}.html">
+    <div>
+      <h4>{{realisation.name}}</h4>
+      {% if realisation.photo %}
       <img
-        class="card-img-top"
-        src="{{methode.image.thumbnails.large.url}}"
+        src="{{realisation.photo.thumbnails.large.url}}"
         loading="lazy"
-        alt="{{methode.name}}"
       />
       {% endif %}
-      <div class="card-body">
-        <p>
-          {% markdown %}
-          {{methode.text}}
-          {% endmarkdown %}
-        </p>
-      </div>
+      <p>Chantier réalisé le : {{realisation.date}}</p>
+      <p>{{realisation.department}}</p>
     </div>
+  </a>
+  {% endfor %}
+  <br />
+  <hr />
+  <br />
+  <h3>Questions Fréquentes</h3>
+  {% for question in questionsFrequentes %}
+  <div>
+    <h4>{{question.question}}</h4>
+    <p>
+      {% markdown %}
+      {{question.answer}}
+      {% endmarkdown %}
+    </p>
   </div>
   {% endfor %}
-</div>
-<br />
-<hr />
-<br />
-<h3>Réalisations</h3>
-<p><a href="/realisations">Voir toutes les réalisations &raquo;</a></p>
-
-{% for realisation in realisations %}
-<a href="/realisations/{{realisation.slug}}.html">
-  <div>
-    <h4>{{realisation.name}}</h4>
-    {% if realisation.photo %}
-    <img
-      src="{{realisation.photo.thumbnails.large.url}}"
-      loading="lazy"
-    />
-    {% endif %}
-    <p>Chantier réalisé le : {{realisation.date}}</p>
-    <p>{{realisation.department}}</p>
-  </div>
-</a>
-{% endfor %}
-<br />
-<hr />
-<br />
-<h3>Questions Fréquentes</h3>
-{% for question in questionsFrequentes %}
-<div>
-  <h4>{{question.question}}</h4>
   <p>
-    {% markdown %}
-    {{question.answer}}
-    {% endmarkdown %}
+    <a href="/questions-frequentes"
+      >Voir toutes les questions fréquentes &raquo;</a
+    >
   </p>
-</div>
-{% endfor %}
-<p>
-  <a href="/questions-frequentes"
-    >Voir toutes les questions fréquentes &raquo;</a
-  >
-</p>
-<br />
-<hr />
-<br />
-<h2>Actualités</h2>
-{% for actualite in actualites %}
-<a href="/actualites/{{actualite.slug}}.html">
-  <div>
-    <h3>{{actualite.name}}</h3>
-    {% if actualite.image %}
-    <img
-      src="{{actualite.image.thumbnails.large.url}}"
-      loading="lazy"
-    />
-    {% endif %}
-    <p>Publié le : {{actualite.date}}</p>
-  </div>
-</a>
-{% endfor %}
-<p><a href="/actualites">Voir toutes les actualités &raquo;</a></p>
+  <br />
+  <hr />
+  <br />
+  <h2>Actualités</h2>
+  {% for actualite in actualites %}
+  <a href="/actualites/{{actualite.slug}}.html">
+    <div>
+      <h3>{{actualite.name}}</h3>
+      {% if actualite.image %}
+      <img
+        src="{{actualite.image.thumbnails.large.url}}"
+        loading="lazy"
+      />
+      {% endif %}
+      <p>Publié le : {{actualite.date}}</p>
+    </div>
+  </a>
+  {% endfor %}
+  <p><a href="/actualites">Voir toutes les actualités &raquo;</a></p>
 
-{% endblock %}
+  {% endblock %}
+</div>
