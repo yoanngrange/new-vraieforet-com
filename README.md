@@ -81,39 +81,3 @@ Type
 * "Wikipedia" (link to wikipedia artile, if any)
 * "TechIllustration" (available technical illustration of the plant, if any)
 
-For the lower layer, we chose Node.JS so we could rely on a very simple, usable and open source server-side basis.
-
-For variables manipulation, we chose Handlebars which is very convenient and covers approximatively all the use cases.
-All the rest is pure Vanilla JS.
-
-Therefore we chose to exploit the following node modules : 
-* FS
-* Axios
-* Handlebars
-* Express
-* Express-SSLify
-
-For the front, we chose Bootstrap 4.3.1
-
-## File system 
-
-* /docs contains a few assets for app documentation purposes
-* /public contains all exposable assets (images, PDFs, favicons, css, js,...) and generated static html files
-* /node_modules contains all Node.JS modules necessary for the app to build
-* /templates contains the two files of the app who build the homepage of the app and one page per post
-
-## Demos
-
-### Edit & Rebuild Demo
-
-Here is a short screencast of a simple spreadsheet edit and page rebuild:
-
-![Edit and rebuild](https://github.com/yoanngrange/new-vraieforet-com/blob/main/docs/img/rebuild.gif?raw=true)
-
-
-### Edit, Commit, Push & Deploy Demo
-
-Here is a short screencast of an example of the duration of these different steps : edit, commit, push, deploy:
-
-![Edit and rebuild](https://github.com/yoanngrange/new-vraieforet-com/blob/main/docs/img/deploy.gif?raw=true)
-
