@@ -3,7 +3,7 @@
   <div class="container">
 
     <h2>Contact</h2>
-    
+
     <div class="card p-4">
       <h3>Téléphone</h3>
       <p>06 43 67 78 14</p>
@@ -46,11 +46,11 @@
     {% if footerCommunes %}
     <p class="white text-center small">
       {% for commune in footerCommunes %}
-      <a href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>{{ "," if not loop.last }}
+      <a class="white" href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>{{ "," if not loop.last }}
       {% endfor %}
     </p>
     {% endif %}
-    <p class="white text-center"><a href="/plantation/index.html">Voir toutes nos zones d'intervention &raquo;</a></p>
+    <p class="white text-center"><a class="white" href="/plantation/index.html">Voir toutes nos zones d'intervention &raquo;</a></p>
 
     <p class="white text-center">VraieForet.com - Copyright 2021-2022 - Mentions légales</p>
     <p class="white text-center small">
