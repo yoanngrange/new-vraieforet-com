@@ -71,6 +71,11 @@ function generateFile({ context, distFile, templateFile }) {
     mkdirSync(dist);
   }
 
+  const css = path.join(__dirname, "css");
+  if (!existsSync(css)) {
+    mkdirSync(css);
+  }
+
   if (allPaths.length > 1) {
     const [, ...paths] = allPaths.reverse();
     const dir = path.join(dist, ...paths.reverse());

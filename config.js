@@ -223,8 +223,4 @@ export const files = [
       }),
     },
   },
-  {
-    templateFile: "./public/css/bootstrap.min.css",
-    distFile: `css/bootstrap.min.css`,
-  },
 ];
