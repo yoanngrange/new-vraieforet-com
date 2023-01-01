@@ -92,7 +92,9 @@ export const files = [
     templateFile: "communes.njk",
     distFile: "plantation/index.html",
     meta: () => ({
-      title: "Plantation dans la commune",
+      title: "Plantation d'arbres en Loire-Atlantique, en Maine et Loire et en Vendée",
+      description: "Vous souhaitez planter une forêt, une micro-forêt, une haie bocagère / champêtre ou encore un verger ? Contactez Vraie Forêt et visitons ensemble la parcelle de votre projet.",
+      keywords: "plantation commune, plantation ville, plantation municipalité, plantation forestière".commune,
     }),
     datasource: {
       loireAtlantique: communes.withConstraints({
@@ -113,7 +115,7 @@ export const files = [
   {
     templateFile: "essence.njk",
     meta: (essence) => ({
-      title: essence,
+      title: essence." - Essence d'arbre - Fiche botanique",
     }),
     distFile: (slug) => `essences/${slug}.html`,
     multiPages: true,

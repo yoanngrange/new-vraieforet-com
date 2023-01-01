@@ -105,18 +105,14 @@
   <div class="accordion open accordion-flush" id="questionAccordion">
   {% for question in questionsFrequentes %}
     <div class="accordion-item">
-      <h2 class="accordion-header" id="question{{question.question.id}}">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuestion{{question.question.id}}" aria-expanded="true" aria-controls="collapseQuestion{{question.question.id}}">
+      <h2 class="accordion-header" id="question{{question.id}}">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuestion{{question.id}}" aria-expanded="true" aria-controls="collapseQuestion{{question.id}}">
           {{question.question}}
         </button>
       </h2>
-      <div id="collapseQuestion{{question.question.id}}" class="accordion-collapse collapse show" aria-labelledby="question{{question.question.id}}" data-bs-parent="#questionAccordion">
+      <div id="collapseQuestion{{question.id}}" class="accordion-collapse collapse" aria-labelledby="question{{question.id}}" data-bs-parent="#questionAccordion">
         <div class="accordion-body">
-          <p>
-          {% markdown %}
-          {{question.answer}}
-          {% endmarkdown %}
-          </p>
+          <p>{% markdown %}{{question.answer}}{% endmarkdown %}</p>
         </div>
       </div>
     </div>
