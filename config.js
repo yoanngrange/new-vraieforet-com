@@ -75,9 +75,9 @@ export const files = [
   },
   {
     templateFile: "commune.njk",
-    distFile: (slug) => `plantations/${slug}.html`,
+    distFile: (slug) => `plantation/${slug}.html`,
     meta: (commune) => ({
-      title: commune,
+      title: "Plantation forestières à ".commune,
     }),
     multiPages: true,
     datasource: {
@@ -90,9 +90,9 @@ export const files = [
   },
   {
     templateFile: "communes.njk",
-    distFile: "communes/index.html",
+    distFile: "plantation/index.html",
     meta: () => ({
-      title: "Communes",
+      title: "Plantation dans la commune",
     }),
     datasource: {
       loireAtlantique: communes.withConstraints({
@@ -103,9 +103,6 @@ export const files = [
       }),
       maineEtLoire: communes.withConstraints({
         filterByFormula: "{Department} = '49'",
-      }),
-      ileEtVilaine: communes.withConstraints({
-        filterByFormula: "{Department} = '35'",
       }),
       footerCommunes: communes.withConstraints({
         filterByFormula: "{Department} = '44'",
