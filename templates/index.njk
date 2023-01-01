@@ -3,28 +3,32 @@
 {% block content %}
 <h3>Services</h3>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center row-cols-1 row-cols-md-2 g-4">
   {% for service in services %}
-  <div class="col-10 col-md-4">
+  <div class="col">
     <a href="/services/{{service.slug}}.html">
-      <div>
-        <h4>{{service.name}}</h4>
+      <div class="card">
         {% if service.image %}
         <img
+          class="card-img-top"
           src="{{service.image.thumbnails.large.url}}"
           loading="lazy"
+          alt="{{service.name}}"
         />
         {% endif %}
-        <p>
-          {% markdown %}
-          {{service.text | truncate(240, true, "...")}} </p>
-          {% endmarkdown %}
-        <p>
-          {% for target in service.targets %}
-          <span>{{target}}</span>{{ "," if not loop.last }}
-          {% endfor %}
-        </p>
-        <button>En savoir plus &raquo;</button>
+        <div class="card-body">
+          <h4 class="card-title">{{service.name}}</h4>
+          <p class="card-text">
+            {% markdown %}
+            {{service.text | truncate(240, true, "...")}} </p>
+            {% endmarkdown %}
+          <p>
+            {% for target in service.targets %}
+            <span class="badge bg-secondary">{{target}}</span>{{ "," if not loop.last }}
+            {% endfor %}
+          </p>
+          <button type="button" class="btn btn-success">En savoir plus &raquo;</button>
+        </div>
       </div>
     </a>
   </div>
