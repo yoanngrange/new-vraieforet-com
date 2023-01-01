@@ -1,5 +1,6 @@
 {% extends "_base.njk" %} 
 {% block content %}
+<div class="container">
 <h1>Réalisations</h1>
   {% for realisation in realisations %}
   <a href="/realisations/{{realisation.slug}}.html">
@@ -18,6 +19,5 @@
   {% else %}
     <p>Aucune réalisation actuellement référencée.</p>
   {% endfor %}
-
-  
+</div>
 {% endblock %}

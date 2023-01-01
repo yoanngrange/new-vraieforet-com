@@ -26,7 +26,7 @@
           {% endif %}
           <div class="card-body">
             <h4 class="card-title">{{service.name}}</h4>
-            <p class="card-text">
+            <p class="card-text small">
               {% markdown %}
               {{service.text | truncate(240, true, "...")}} </p>
               {% endmarkdown %}
@@ -119,7 +119,7 @@
   {% endfor %}
   </div>
   <p>
-    <a href="/questions-frequentes">Voir toutes les questions fréquentes &raquo;</a>
+    <a class="btn btn-lg btn-success" href="/questions-frequentes">Voir toutes les questions fréquentes &raquo;</a>
   </p>
 
   <br />
