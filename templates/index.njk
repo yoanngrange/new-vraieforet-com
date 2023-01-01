@@ -78,7 +78,9 @@
   <br />
 
   <h3>Réalisations</h3>
-  <p><a href="/realisations">Voir toutes les réalisations &raquo;</a></p>
+  <p class="text-center">
+    <a class="btn btn-lg btn-success" href="/realisations">Voir toutes les réalisations &raquo;</a>
+  </p>
   {% for realisation in realisations %}
   <a href="/realisations/{{realisation.slug}}.html">
     <div>
@@ -100,16 +102,26 @@
   <br />
 
   <h3>Questions Fréquentes</h3>
+  <div class="accordion" id="questionAccordion">
   {% for question in questionsFrequentes %}
-  <div>
-    <h4>{{question.question}}</h4>
-    <p>
-      {% markdown %}
-      {{question.answer}}
-      {% endmarkdown %}
-    </p>
-  </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="question{{question.question.id}}">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuestion{{question.question.id}}" aria-expanded="true" aria-controls="collapseQuestion{{question.question.id}}">
+          {{question.question}}
+        </button>
+      </h2>
+      <div id="collapseQuestion{{question.question.id}}" class="accordion-collapse collapse show" aria-labelledby="question{{question.question.id}}" data-bs-parent="#questionAccordion">
+        <div class="accordion-body">
+          <p>
+          {% markdown %}
+          {{question.answer}}
+          {% endmarkdown %}
+          </p>
+        </div>
+      </div>
+    </div>
   {% endfor %}
+  </div>
   <p>
     <a href="/questions-frequentes">Voir toutes les questions fréquentes &raquo;</a>
   </p>
