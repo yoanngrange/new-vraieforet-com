@@ -34,7 +34,7 @@
             </div>
             <p>
               {% for target in service.targets %}
-              <span class="badge bg-secondary small target-label">{{target}}</span>{{ " " if not loop.last }}
+              <span class="badge small target-label">{{target}}</span>{{ " " if not loop.last }}
               {% endfor %}
             </p>
             <button type="button" class="text-center btn btn-success">En savoir plus &raquo;</button>
