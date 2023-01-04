@@ -82,9 +82,9 @@
   </p>
   <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     {% for realisation in realisations %}
-    <a href="/realisations/{{realisation.slug}}.html">
+    <a class="card-link" href="/realisations/{{realisation.slug}}.html">
       <div class="col">
-        <div class="card h-100 card-link">
+        <div class="card h-100">
           <h4 class="card-title">{{realisation.name}}</h4>
           {% if realisation.photo %}
           <img
@@ -95,8 +95,8 @@
           />
           {% endif %}
           <div class="card-text">
-            <p>Chantier réalisé le : {{realisation.date}}</p>
-            <p>Département : {{realisation.department}}</p>
+            <p>{{realisation.date}} - {{realisation.department}}</p>
+            <button type="button" class="text-center btn btn-success btn-sm">Lire le témoignage client &raquo;</button>
           </div>
         </div>    
       </div>
@@ -163,9 +163,9 @@
 
   <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     {% for actualite in actualites %}
-    <a href="/actualites/{{actualite.slug}}.html">
+    <a class="card-link" href="/actualites/{{actualite.slug}}.html">
       <div class="col">
-        <div class="card card-link">
+        <div class="card">
           <h3 class="card-title">{{actualite.name}}</h3>
           {% if actualite.image %}
           <img
