@@ -17,10 +17,10 @@
     <div class="col">
       <a class="card-link" href="/services/{{service.slug}}.html">
         <div class="card h-100">
-          {% if service.image %}
+          {% if service.thumb %}
           <img
             class="card-img-top"
-            src="{{service.image.thumbnails.large.url}}"
+            src="{{service.thumb.thumbnails.large.url}}"
             loading="lazy"
             alt="{{service.name}}"
           />
@@ -84,10 +84,10 @@
     <div class="col">
       <a class="card-link" href="/realisations/{{realisation.slug}}.html">
         <div class="card h-100">
-          {% if realisation.photo %}
+          {% if realisation.thumb %}
             <img
               class="card-img-top"
-              src="{{realisation.photo.thumbnails.large.url}}"
+              src="{{realisation.thumb.thumbnails.large.url}}"
               loading="lazy"
               alt="{{realisation.name}}"
             />
@@ -176,10 +176,10 @@
     <a class="card-link" href="/actualites/{{actualite.slug}}.html">
       <div class="col">
         <div class="card h-100">
-          {% if actualite.image %}
+          {% if actualite.thumb %}
           <img
             class="card-img-top"
-            src="{{actualite.image.thumbnails.large.url}}"
+            src="{{actualite.thumb.thumbnails.large.url}}"
             loading="lazy"
             alt="{{actualite.name}}"
           />

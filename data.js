@@ -18,6 +18,7 @@ function actualiteMapper(record) {
     header: record.get("Header"),
     content: record.get("Content"),
     image: record.get("Image") && record.get("Image")[0],
+    thumb: record.get("ImageThumb") && record.get("ImageThumb")[0],
     youtube: record.get("Youtube"),
   };
 }
@@ -66,6 +67,7 @@ function essencesMapper(record) {
     latin: record.get("Latin"),
     slug: record.get("Slug"),
     images: record.get("Images"),
+    image: record.get("Images") && record.get("Images")[0],
     types: record.get("Type"),
     stratum: record.get("Stratum"),
     soils: record.get("Soil"),
@@ -103,6 +105,7 @@ function projetMapper(record) {
     order: record.get("Order"),
     text: record.get("Text"),
     image: record.get("Image") && record.get("Image")[0],
+    thumb: record.get("ImageThumb") && record.get("ImageThumb")[0],
     link: record.get("Link"),
     call: record.get("Call"),
   };
@@ -135,6 +138,7 @@ function realisationMapper(record) {
     slug: record.get("Slug"),
     date: new Date(record.get("Date")).toLocaleDateString("fr-FR"),
     photo: record.get("Photos") && record.get("Photos")[0],
+    thumb: record.get("ImgeThumb") && record.get("ImgeThumb")[0],
     context: record.get("Context"),
     testimonial: record.get("Testimonial"),
     authors: record.get("Authors"),
@@ -160,6 +164,7 @@ function servicesMapper(record) {
     header: record.get("Header"),
     text: record.get("Text"),
     image: record.get("Image") && record.get("Image")[0],
+    thumb: record.get("ImageThumb") && record.get("ImageThumb")[0],
     targets: record.get("Targets"),
   };
 }
