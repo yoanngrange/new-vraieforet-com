@@ -11,7 +11,8 @@
   <br>
   
   <h3>Services</h3>
-  <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
+  <p class="lead">De la prestation complète jusqu'à l'interventione partielle sur votre projet</p>
+  <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     {% for service in services %}
     <div class="col">
       <a class="card-link" href="/services/{{service.slug}}.html">
@@ -28,7 +29,7 @@
             <h4 class="card-title">{{service.name}}</h4>
             <div class="card-text small">
               {% markdown %}
-              {{service.header | truncate(200, true, "...")}} </p>
+              {{service.header | truncate(200, true, " [...]")}} </p>
               {% endmarkdown %}
             </div>
             <p>
@@ -36,7 +37,7 @@
               <span class="badge bg-secondary small">{{target}}</span>{{ " " if not loop.last }}
               {% endfor %}
             </p>
-            <button type="button" class="btn btn-success">En savoir plus &raquo;</button>
+            <button type="button" class="text-center btn btn-success">En savoir plus &raquo;</button>
           </div>
         </div>
       </a>
@@ -52,8 +53,8 @@
   <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
     {% for methode in methodes %}
     <div class="col">
-      <div class="card h-100">
-        <h4 class="card-title">{{methode.name}}</h4>
+      <div class="card h-100 method-card">
+        <h4 class="card-title method-title">{{methode.name}}</h4>
         {% if methode.image %}
         <img
           class="card-img-top"
@@ -62,12 +63,12 @@
           alt="{{methode.name}}"
         />
         {% endif %}
-        <div class="card-body">
-          <p>
+        <div class="card-body method-body">
+          <div>
             {% markdown %}
             {{methode.text}}
             {% endmarkdown %}
-          </p>
+          </div>
         </div>
       </div>
     </div>
