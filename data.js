@@ -159,6 +159,7 @@ function servicesMapper(record) {
   return {
     name: record.get("Name"),
     order: record.get("Order"),
+    published: record.get("Published"),
     slug: record.get("Slug"),
     header: record.get("Header"),
     text: record.get("Text"),
