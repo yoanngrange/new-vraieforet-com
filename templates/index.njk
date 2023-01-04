@@ -55,7 +55,6 @@
     {% for methode in methodes %}
     <div class="col">
       <div class="card h-100 method-card">
-        <h4 class="card-title method-title">{{methode.name}}</h4>
         {% if methode.image %}
         <img
           class=""
@@ -64,6 +63,7 @@
           alt="{{methode.name}}"
         />
         {% endif %}
+        <h4 class="card-title method-title">{{methode.name}}</h4>
         <div class="card-body method-body small">
           {% markdown %}
           {{methode.text}}
