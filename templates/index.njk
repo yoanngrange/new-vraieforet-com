@@ -189,6 +189,11 @@
               <p><span class="badge small target-label">{{actualite.date}}</span></p>
             </div>
             <h3 class="card-title">{{actualite.name}}</h3>
+            <div class="card-text small">
+              {% markdown %}
+              {{actualite.header | truncate(140, true, "[...]")}} </p>
+              {% endmarkdown %}
+            </div>
           </div>
         </div>
       </div>
