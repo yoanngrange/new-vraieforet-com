@@ -4,14 +4,14 @@
 <div class="container home">
 
   <h1>Vraie Forêt</h1>
-  <h2>Plantation de forêt, micro-forêt, haie &amp; verger</h2>
+  <h2 class="sub">Plantation de forêt, micro-forêt, haie &amp; verger</h2>
 
   <br />
   <hr class="seperator" />
   <br />
   
   <a class="anchor" name="Services"></a>
-  <h3>Services</h3>
+  <h2>Services</h2>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
     {% for service in services %}
     <div class="col">
@@ -26,7 +26,7 @@
           />
           {% endif %}
           <div class="card-body">
-            <h4 class="card-title">{{service.name}}</h4>
+            <h3 class="card-title">{{service.name}}</h3>
             <div class="card-text small">
               {% markdown %}
               {{service.header | truncate(200, true, "[...]")}} </p>
@@ -50,7 +50,7 @@
   <br />
 
   <a class="anchor" name="Methode"></a>
-  <h3>Méthode</h3>
+  <h2>Méthode</h2>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
     {% for methode in methodes %}
     <div class="col">
@@ -63,7 +63,7 @@
           alt="{{methode.name}}"
         />
         {% endif %}
-        <h4 class="card-title method-title">{{methode.name}}</h4>
+        <h3 class="card-title method-title">{{methode.name}}</h3>
         <div class="card-body method-body small">
           {% markdown %}
           {{methode.text}}
@@ -78,7 +78,7 @@
   <hr class="seperator" />
   <br />
 
-  <h3>Dernières réalisations</h3>
+  <h2>Dernières réalisations</h2>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
     {% for realisation in realisations %}
     <div class="col">
@@ -93,7 +93,7 @@
             />
           {% endif %}
           <div class="card-body">  
-            <h4 class="card-title">{{realisation.name}}</h4>
+            <h3 class="card-title">{{realisation.name}}</h3>
             <div class="card-text">
               <p><span class="badge small target-label">{{realisation.department}}</span></p>
               <button type="button" class="text-center btn btn-success btn-sm">Contexte &amp; témoignage client &raquo;</button>
@@ -116,15 +116,15 @@
   <hr class="seperator" />
   <br />
 
-  <h3>Questions Fréquentes</h3>
+  <h2>Questions Fréquentes</h2>
   <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
     <div class="col-12 col-sm-10 col-md-8 col-lg-6">
       <div class="accordion" id="questionAccordion">
       {% for question in questionsFrequentes %}
         <div class="accordion-item">
-          <h2 class="accordion-header" id="question{{question.id}}">
+          <h3 class="accordion-header" id="question{{question.id}}">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuestion{{question.id}}" aria-expanded="true" aria-controls="collapseQuestion{{question.id}}">{{question.question}}</button>
-          </h2>
+          </h3>
           <div id="collapseQuestion{{question.id}}" class="accordion-collapse collapse" aria-labelledby="question{{question.id}}" data-bs-parent="#questionAccordion">
             <div class="accordion-body">
               <p>{% markdown %}{{question.answer}}{% endmarkdown %}</p>
