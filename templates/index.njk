@@ -125,7 +125,7 @@
           <h3 class="accordion-header" id="question{{question.id}}">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuestion{{question.id}}" aria-expanded="true" aria-controls="collapseQuestion{{question.id}}">{{question.question}}</button>
           </h3>
-          <div id="collapseQuestion{{question.id}}" class="accordion-collapse collapse" aria-labelledby="question{{question.id}}" data-bs-parent="#questionAccordion">
+          <div id="collapseQuestion{{question.id}}" class="accordion-collapse collapse" aria-labelledby="question{{question.id}}">
             <div class="accordion-body">
               <p>{% markdown %}{{question.answer}}{% endmarkdown %}</p>
             </div>
