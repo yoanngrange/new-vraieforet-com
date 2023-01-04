@@ -49,7 +49,7 @@
   <br />
 
   <h3>Méthode</h3>
-  <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
+  <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     {% for methode in methodes %}
     <div class="col">
       <div class="card h-100 method-card">
@@ -80,7 +80,7 @@
   <p class="text-center">
     <a class="btn btn-lg btn-success" href="/realisations">Voir toutes les réalisations &raquo;</a>
   </p>
-  <div class="row">
+  <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     {% for realisation in realisations %}
     <a href="/realisations/{{realisation.slug}}.html">
       <div class="col">
@@ -159,7 +159,7 @@
   <br>
   <br>
 
-  <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
+  <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     {% for actualite in actualites %}
     <a href="/actualites/{{actualite.slug}}.html">
       <div class="col">
