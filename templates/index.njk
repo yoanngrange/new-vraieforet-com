@@ -84,18 +84,18 @@
     <div class="col">
       <a class="card-link" href="/realisations/{{realisation.slug}}.html">
         <div class="card h-100">
-          <div class="card-body">
-            {% if realisation.photo %}
+          {% if realisation.photo %}
             <img
               class="card-img-top"
               src="{{realisation.photo.thumbnails.large.url}}"
               loading="lazy"
               alt="{{realisation.name}}"
             />
-            {% endif %}
+          {% endif %}
+          <div class="card-body">  
             <h4 class="card-title">{{realisation.name}}</h4>
             <div class="card-text">
-              <p>{{realisation.department}}</p>
+              <p><span class="badge small target-label">{{realisation.department}}</span></p>
               <button type="button" class="text-center btn btn-success btn-sm">Contexte &amp; témoignage client &raquo;</button>
             </div>
           </div>
