@@ -19,7 +19,7 @@ export const files = [
     }),
     datasource: {
       services: services.withConstraints({
-        filterByFormula: "{Published} == true",
+        filterByFormula: "{Published} = '1'",
         sort: [{ field: "Order", direction: "asc" }],
       }),
       methodes: methodes.withConstraints({
