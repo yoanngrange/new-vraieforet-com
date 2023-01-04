@@ -116,7 +116,7 @@ export const questionsFrequentes = getDatas({
 
 function questionsFrequentesMapper(record) {
   return {
-    id: record.get("id"),
+    id: record.id,
     question: record.get("Question"),
     answer: record.get("Answer"),
     weight: record.get("Weight"),
