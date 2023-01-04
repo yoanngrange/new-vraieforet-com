@@ -28,7 +28,7 @@
             <h4 class="card-title">{{service.name}}</h4>
             <div class="card-text small">
               {% markdown %}
-              {{service.text | truncate(200, true, "...")}} </p>
+              {{service.header | truncate(200, true, "...")}} </p>
               {% endmarkdown %}
             </div>
             <p>

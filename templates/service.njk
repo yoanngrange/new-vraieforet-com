@@ -10,12 +10,19 @@
     loading="lazy"
   />
   {% endif %}
+  {% if service.header %}
+  <div>
+    {% markdown %}
+    {{service.header}}
+    {% endmarkdown %}
+  </div>
+  {% endif %}
   {% if service.text %}
-  <p>Contexte : 
+  <div>
     {% markdown %}
     {{service.text}}
     {% endmarkdown %}
-  </p>
+  </div>
   {% endif %}
   <p>
     {% for target in service.targets %}

@@ -157,6 +157,7 @@ function servicesMapper(record) {
     name: record.get("Name"),
     order: record.get("Order"),
     slug: record.get("Slug"),
+    header: record.get("Header"),
     text: record.get("Text"),
     image: record.get("Image") && record.get("Image")[0],
     targets: record.get("Targets"),
