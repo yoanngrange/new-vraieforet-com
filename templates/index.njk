@@ -148,7 +148,7 @@
   <br />
 
   <h2 class="text-center">Actualités</h2>
-  <p class="section-title">Les 3 dernières vidéos sur <a class="green-link" href="https://www.youtube.com/channel/UC5ZooWI9T3czUWqXRfHKMCQ" target="_blank">notre chaîne Youtube</a></p>
+  <p class="text-center">Les 3 dernières vidéos de la <a class="green-link" href="https://www.youtube.com/channel/UC5ZooWI9T3czUWqXRfHKMCQ" target="_blank">chaîne Youtube</a></p>
   <div class="row">
     <div class="col-md-12 col-lg-4">
       <div class="ratio ratio-16x9">
@@ -170,7 +170,7 @@
   <br>
   <br>
 
-  <p class="section-title">Les 3 derniers articles du blog</p>
+  <p class="text-center">Les 3 derniers articles du blog</p>
   <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
     {% for actualite in actualites %}
     <a class="card-link" href="/actualites/{{actualite.slug}}.html">
@@ -185,10 +185,10 @@
           />
           {% endif %}
           <div class="card-body">
-            <h3 class="card-title">{{actualite.name}}</h3>
             <div class="card-text">
-              <p>Publié le : <span class="badge small target-label">{{actualite.date}}</span></p>
+              <p><span class="badge small target-label">{{actualite.date}}</span></p>
             </div>
+            <h3 class="card-title">{{actualite.name}}</h3>
           </div>
         </div>
       </div>
