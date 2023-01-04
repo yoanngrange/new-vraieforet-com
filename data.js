@@ -15,7 +15,7 @@ function actualiteMapper(record) {
     name: record.get("Name"),
     slug: record.get("Slug"),
     date: new Date(record.get("Date")).toLocaleDateString("fr-FR"),
-    header: record.get("header"),
+    header: record.get("Header"),
     content: record.get("Content"),
     image: record.get("Image") && record.get("Image")[0],
     youtube: record.get("Youtube"),

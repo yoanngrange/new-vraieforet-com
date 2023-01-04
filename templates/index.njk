@@ -78,10 +78,7 @@
   <hr />
   <br />
 
-  <h3>Réalisations</h3>
-  <p class="text-center">
-    <a class="btn btn-lg btn-success" href="/realisations">Voir toutes les réalisations &raquo;</a>
-  </p>
+  <h3>Dernières réalisations</h3>
   <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     {% for realisation in realisations %}
     <a class="card-link" href="/realisations/{{realisation.slug}}.html">
@@ -104,6 +101,9 @@
       </div>
     </a>
     {% endfor %}
+    <p class="text-center">
+      <a class="btn btn-lg btn-success" href="/realisations">Voir toutes les réalisations &raquo;</a>
+    </p>
   </div>
   
   <br />
