@@ -30,7 +30,8 @@
               {% markdown %}
               {{service.text | truncate(200, true, "...")}} </p>
               {% endmarkdown %}
-            <div>
+            </div>
+            <p>
               {% for target in service.targets %}
               <span class="badge bg-secondary small">{{target}}</span>{{ " " if not loop.last }}
               {% endfor %}
