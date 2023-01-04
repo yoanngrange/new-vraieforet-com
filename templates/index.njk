@@ -11,7 +11,6 @@
   <br>
   
   <h3>Services</h3>
-  <p class="lead">De la prestation complète jusqu'à l'interventione partielle sur votre projet</p>
   <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     {% for service in services %}
     <div class="col">
@@ -34,7 +33,7 @@
             </div>
             <p>
               {% for target in service.targets %}
-              <span class="badge bg-secondary small">{{target}}</span>{{ " " if not loop.last }}
+              <span class="badge bg-secondary small target-label">{{target}}</span>{{ " " if not loop.last }}
               {% endfor %}
             </p>
             <button type="button" class="text-center btn btn-success">En savoir plus &raquo;</button>
@@ -63,12 +62,10 @@
           alt="{{methode.name}}"
         />
         {% endif %}
-        <div class="card-body method-body">
-          <div>
-            {% markdown %}
-            {{methode.text}}
-            {% endmarkdown %}
-          </div>
+        <div class="card-body method-body small">
+          {% markdown %}
+          {{methode.text}}
+          {% endmarkdown %}
         </div>
       </div>
     </div>
