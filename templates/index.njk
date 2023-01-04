@@ -12,7 +12,7 @@
   
   <a class="anchor" name="Services"></a>
   <h2>Services</h2>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-5">
     {% for service in services %}
     <div class="col">
       <a class="card-link" href="/services/{{service.slug}}.html">
@@ -63,11 +63,13 @@
           alt="{{methode.name}}"
         />
         {% endif %}
-        <h3 class="card-title method-title">{{methode.name}}</h3>
-        <div class="card-body method-body small">
-          {% markdown %}
-          {{methode.text}}
-          {% endmarkdown %}
+        <div class="card-body">
+          <h3 class="card-title">{{methode.name}}</h3>
+          <div class="small">
+            {% markdown %}
+            {{methode.text}}
+            {% endmarkdown %}
+          </div>
         </div>
       </div>
     </div>
