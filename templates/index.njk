@@ -14,7 +14,7 @@
   <div class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
     {% for service in services %}
     <div class="col">
-      <a href="/services/{{service.slug}}.html">
+      <a class="card-link" href="/services/{{service.slug}}.html">
         <div class="card h-100">
           {% if service.image %}
           <img
@@ -26,13 +26,13 @@
           {% endif %}
           <div class="card-body">
             <h4 class="card-title">{{service.name}}</h4>
-            <p class="card-text small">
+            <div class="card-text small">
               {% markdown %}
-              {{service.text | truncate(240, true, "...")}} </p>
+              {{service.text | truncate(200, true, "...")}} </p>
               {% endmarkdown %}
-            <p>
+            <div>
               {% for target in service.targets %}
-              <span class="badge bg-secondary">{{target}}</span>{{ "," if not loop.last }}
+              <span class="badge bg-secondary small">{{target}}</span>{{ " " if not loop.last }}
               {% endfor %}
             </p>
             <button type="button" class="btn btn-success">En savoir plus &raquo;</button>
