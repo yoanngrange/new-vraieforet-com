@@ -74,8 +74,7 @@ function essencesMapper(record) {
     exposures: record.get("Exposure"),
     description: record.get("Description"),
     wikipedia: record.get("Wikipedia"),
-    techIllustration:
-      record.get("TechIllustration") && record.get("TechIllustration")[0],
+    techIllustration: record.get("TechIllustration") && record.get("TechIllustration")[0],
   };
 }
 
