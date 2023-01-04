@@ -18,12 +18,8 @@ export const files = [
       title: "Accueil",
     }),
     datasource: {
-      footerCommunes: communes.withConstraints({
-        filterByFormula: "{Department} = '44'",
-        sort: [{ field: "Name", direction: "asc" }],
-      }),
       services: services.withConstraints({
-        filterByFormula: "{Published} = true",
+        filterByFormula: "{Published} == true",
         sort: [{ field: "Order", direction: "asc" }],
       }),
       methodes: methodes.withConstraints({
@@ -40,6 +36,10 @@ export const files = [
       actualites: actualites.withConstraints({
         limit: 3,
         sort: [{ field: "Date", direction: "desc" }],
+      }),
+      footerCommunes: communes.withConstraints({
+        filterByFormula: "{Department} = '44'",
+        sort: [{ field: "Name", direction: "asc" }],
       }),
     },
   },
