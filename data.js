@@ -137,7 +137,7 @@ function realisationMapper(record) {
     slug: record.get("Slug"),
     date: new Date(record.get("Date")).toLocaleDateString("fr-FR"),
     photo: record.get("Photos") && record.get("Photos")[0],
-    thumb: record.get("ImgeThumb") && record.get("ImgeThumb")[0],
+    thumb: record.get("ImageThumb") && record.get("ImageThumb")[0],
     context: record.get("Context"),
     testimonial: record.get("Testimonial"),
     authors: record.get("Authors"),
