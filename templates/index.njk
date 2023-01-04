@@ -84,18 +84,20 @@
     <div class="col">
       <a class="card-link" href="/realisations/{{realisation.slug}}.html">
         <div class="card h-100">
-          {% if realisation.photo %}
-          <img
-            class="card-img-top"
-            src="{{realisation.photo.thumbnails.large.url}}"
-            loading="lazy"
-            alt="{{realisation.name}}"
-          />
-          {% endif %}
-          <h4 class="card-title">{{realisation.name}}</h4>
-          <div class="card-text">
-            <p>{{realisation.department}}</p>
-            <button type="button" class="text-center btn btn-success btn-sm">Lire le témoignage client &raquo;</button>
+          <div class="card-body">
+            {% if realisation.photo %}
+            <img
+              class="card-img-top"
+              src="{{realisation.photo.thumbnails.large.url}}"
+              loading="lazy"
+              alt="{{realisation.name}}"
+            />
+            {% endif %}
+            <h4 class="card-title">{{realisation.name}}</h4>
+            <div class="card-text">
+              <p>{{realisation.department}}</p>
+              <button type="button" class="text-center btn btn-success btn-sm">Contexte &amp; témoignage client &raquo;</button>
+            </div>
           </div>
         </div>
       </a>
