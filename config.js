@@ -23,7 +23,7 @@ export const files = [
         sort: [{ field: "Name", direction: "asc" }],
       }),
       services: services.withConstraints({
-        filterByFormula: "{Published} = true",
+        filterByFormula: "{Published} = 'true'",
         sort: [{ field: "Order", direction: "asc" }],
       }),
       methodes: methodes.withConstraints({
