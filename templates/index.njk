@@ -147,27 +147,21 @@
   <br />
 
   <h2>Actualités</h2>
-  <br>
+  <p class="section-title">Les 3 dernières vidéos sur <a class="green-link" href="https://www.youtube.com/channel/UC5ZooWI9T3czUWqXRfHKMCQ" target="_blank">notre chaîne Youtube</a></p>
   <div class="row">
-    <div class="col">
-      <h4 class="section-title">Les 3 dernières vidéos sur <a class="green-link" href="https://www.youtube.com/channel/UC5ZooWI9T3czUWqXRfHKMCQ" target="_blank">notre chaîne Youtube</a></h4>
-      <br>
-      <div class="row">
-        <div class="col-md-12 col-lg-4">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU5ZooWI9T3czUWqXRfHKMCQ&index=1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="col-md-12 col-lg-4">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU5ZooWI9T3czUWqXRfHKMCQ&index=2" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="col-md-12 col-lg-4">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU5ZooWI9T3czUWqXRfHKMCQ&index=3" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
+    <div class="col-md-12 col-lg-4">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU5ZooWI9T3czUWqXRfHKMCQ&index=1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU5ZooWI9T3czUWqXRfHKMCQ&index=2" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU5ZooWI9T3czUWqXRfHKMCQ&index=3" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -175,12 +169,12 @@
   <br>
   <br>
 
+  <p class="section-title">Les 3 derniers articles du blog</p>
   <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
     {% for actualite in actualites %}
     <a class="card-link" href="/actualites/{{actualite.slug}}.html">
       <div class="col">
         <div class="card">
-          <h3 class="card-title">{{actualite.name}}</h3>
           {% if actualite.image %}
           <img
             class="card-img-top"
@@ -189,8 +183,11 @@
             alt="{{actualite.name}}"
           />
           {% endif %}
-          <div class="card-text">
-            <p>Publié le : {{actualite.date}}</p>
+          <div class="card-body">
+            <h3 class="card-title">{{actualite.name}}</h3>
+            <div class="card-text">
+              <p>Publié le : <span class="badge small target-label">{{actualite.date}}</span></p>
+            </div>
           </div>
         </div>
       </div>
