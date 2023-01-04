@@ -84,7 +84,6 @@
     <div class="col">
       <a class="card-link" href="/realisations/{{realisation.slug}}.html">
         <div class="card h-100">
-          <h4 class="card-title">{{realisation.name}}</h4>
           {% if realisation.photo %}
           <img
             class="card-img-top"
@@ -93,8 +92,9 @@
             alt="{{realisation.name}}"
           />
           {% endif %}
+          <h4 class="card-title">{{realisation.name}}</h4>
           <div class="card-text">
-            <p>{{realisation.date}} - {{realisation.department}}</p>
+            <p>{{realisation.department}}</p>
             <button type="button" class="text-center btn btn-success btn-sm">Lire le témoignage client &raquo;</button>
           </div>
         </div>
