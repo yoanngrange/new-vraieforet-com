@@ -84,7 +84,7 @@
     {% for realisation in realisations %}
     <a href="/realisations/{{realisation.slug}}.html">
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 card-link">
           <h4 class="card-title">{{realisation.name}}</h4>
           {% if realisation.photo %}
           <img
@@ -94,8 +94,10 @@
             alt="{{realisation.name}}"
           />
           {% endif %}
-          <p>Chantier réalisé le : {{realisation.date}}</p>
-          <p>Département : {{realisation.department}}</p>
+          <div class="card-text">
+            <p>Chantier réalisé le : {{realisation.date}}</p>
+            <p>Département : {{realisation.department}}</p>
+          </div>
         </div>    
       </div>
     </a>
@@ -163,7 +165,7 @@
     {% for actualite in actualites %}
     <a href="/actualites/{{actualite.slug}}.html">
       <div class="col">
-        <div class="card">
+        <div class="card card-link">
           <h3 class="card-title">{{actualite.name}}</h3>
           {% if actualite.image %}
           <img
@@ -173,7 +175,9 @@
             alt="{{actualite.name}}"
           />
           {% endif %}
-          <p>Publié le : {{actualite.date}}</p>
+          <div class="card-text">
+            <p>Publié le : {{actualite.date}}</p>
+          </div>
         </div>
       </div>
     </a>
