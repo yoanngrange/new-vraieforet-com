@@ -149,6 +149,17 @@
     {% include "_header.njk" %} 
     
     <div class="main-block">
+    {% if not "index" in __filename %}
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="/">Revenir à la page d'accueil</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    {% endif %}
     {% block content %} 
       This is the default content 
     {% endblock %} 
