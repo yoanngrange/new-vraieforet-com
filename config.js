@@ -45,7 +45,7 @@ export const files = [
   },
   {
     templateFile: "actualites.njk",
-    distFile: "actualites/index.html",
+    distFile: "blog/index.html",
     meta: () => ({
       title: "Actualités",
     }),
@@ -61,7 +61,7 @@ export const files = [
   },
   {
     templateFile: "actualite.njk",
-    distFile: (slug) => `actualites/${slug}.html`,
+    distFile: (slug) => `blog/${slug}.html`,
     meta: (actualite) => ({
       title: actualite,
     }),
