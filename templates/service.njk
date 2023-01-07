@@ -16,7 +16,7 @@
       {% if service.thumb %}
       <img
         class="img-fluid"
-        src="{{service.thumb.thumbnails.large.url}}"
+        src="{{service.thumb.thumbnails.full.url}}"
         loading="lazy"
       />
       {% endif %}
@@ -28,7 +28,7 @@
         {% for image in service.images %}
         <img
         class="img-fluid"
-        src="{{service.images.thumbnails.small.url}}"
+        src="{{service.image.thumbnails.small.url}}"
         loading="lazy"
         />
         {% endfor %}
