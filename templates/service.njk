@@ -28,19 +28,18 @@
         {% for image in service.images %}
         <img
         class="img-fluid"
-        src="{{image.thumbnails.small.url}}"
+        src="{{image.thumbnails.small.large}}"
         loading="lazy"
         />
+        <br />
         {% endfor %}
       {% endif %}
     </div>
     <div class="col-md-8">
       {% if service.text %}
-      <div>
         {% markdown %}
         {{service.text}}
         {% endmarkdown %}
-      </div>
       {% endif %}
     </div>
   </div>
