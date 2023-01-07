@@ -15,7 +15,7 @@
     <div class="col-md-8">
       {% if service.thumb %}
       <img
-        class="img-fluid"
+        class="img-fluid img-full"
         src="{{service.thumb.thumbnails.full.url}}"
         loading="lazy"
       />
@@ -27,7 +27,7 @@
       {% if service.images %}
         {% for image in service.images %}
         <img
-        class="img-fluid"
+        class="img-fluid img-full"
         src="{{image.thumbnails.small.large}}"
         loading="lazy"
         />
