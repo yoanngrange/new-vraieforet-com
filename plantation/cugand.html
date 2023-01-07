@@ -195,14 +195,15 @@
   <div class="row justify-content-center">
     <div class="col">
       <h1>Plantation à Cugand, 85</h1>
-      <h2>Vraie Forêt vous accompagne dans votre projet de forêt, micro-forêt, bosquet, haie bocagère ou verger</h2>
+      <h2>Forêt, micro-forêt, bosquet, agroforesterie, haie bocagère ou verger</h2>
+      <p class="lead">Vraie Forêt vous accompagne dans votre projet de plantation d'arbres.</p>
       <p id="paragraph"></p>
       <p id="call"></p>
       <script>  
-      let myArrayParagraph = ["Vous cherchez un partenaire pour une plantation forestière à Cugand, planter une haie bocagère, répondre à une obligation DREAL de replanter...", "Vous cherchez une entreprise de plantation forestière pour vous accompagner dans votre projet de plantation forestière, pour planter une haie bocagère, creuser une mare...", "Vous souhaitez déléguer la plantation d'une forêt, d'une haie bocagère ou d'un verger..."];
+      let myArrayParagraph = ["Vous cherchez un partenaire à Cugand pour : une plantation d'arbres ? Qu'il s'agisse d'une réponse à une obligation DREAL de replanter ou bien pour une autre raison, nous pouvons vous aider.", "Vous cherchez une entreprise de plantation forestière pour vous accompagner dans votre projet ?", "Vous souhaitez déléguer la plantation d'une forêt, d'une haie bocagère ou d'un verger ?", "Qu'il s'agisse d'un projet de plantation subventionné ou non, nous pouvons vous accompagner."];
       let randomValue = myArrayParagraph[Math.floor(Math.random() * myArrayParagraph.length)];
       document.getElementById('paragraph').innerHTML = randomValue;
-      let myArrayCall = ["Contactez Vraie Forêt pour une visite de parcelle et l'établissement d'un devis.", "Qu'il s'agisse d'un projet subventionné ou non, nous pouvons vous accompagner totalement ou partiellement. Contactez-nous pour une première rencontre et visite de la parcelle de votre projet.", "Quelque soit votre projet, nous devons nous déplacer pour visiter votre parcelle, prelever des échantillons de sol et vous établir un devis."];
+      let myArrayCall = ["Contactez Vraie Forêt pour une visite de parcelle et l'établissement d'un devis.", "Contactez-nous pour une première rencontre et visite de la parcelle de votre projet.", "Quelque soit votre projet, nous devons nous déplacer pour visiter votre parcelle, prelever des échantillons de sol et vous établir un devis. Contactez-nous !"];
       let randomCall = myArrayCall[Math.floor(Math.random() * myArrayCall.length)];
       document.getElementById('call').innerHTML = randomCall;
       </script>
