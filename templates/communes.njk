@@ -1,25 +1,37 @@
 {% extends "_base.njk" %} 
 
 {% block content %}
-<div class="container">
-  <h1>Zones d'intervention</h1>
-  <h2>Loire-Atlantique (44)</h2>
-  <p>
-  {% for commune in loireAtlantique %}
-    <a href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>,
-  {% endfor %}
-  </p>
-  <h2>Maine et Loire (49)</h2>
-  <p>
-  {% for commune in maineEtLoire %}
-    <a href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>,
-  {% endfor %}
-  </p>
-  <h2>Vendée (85)</h2>
-  <p>
-  {% for commune in vendee %}
-    <a href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>,
-  {% endfor %}
-  </p>
+<div class="container communes">
+  <div class="row justify-content-center">
+    <div class="col">
+      <h1>Zones d'intervention</h1>
+      <p class="lead">Nous intervenons dans les départements et communes suivantes pour la plantation d'arbres. Qu'il s'agisse de forêts, micro-forêts, alignements d'arbres agroforestiers, haies champêtres / bocagères ou vergers.</p>
+      <br />
+      <h2>Loire-Atlantique (44)</h2>
+      <p>
+      {% for commune in loireAtlantique %}
+        <a class="green-link" href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>,
+      {% endfor %}
+      </p>
+      <br />
+      <hr class="separator" />
+      <br />
+      <h2>Maine et Loire (49)</h2>
+      <p>
+      {% for commune in maineEtLoire %}
+        <a class="green-link" href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>,
+      {% endfor %}
+      </p>
+      <br />
+      <hr class="separator" />
+      <br />
+      <h2>Vendée (85)</h2>
+      <p>
+      {% for commune in vendee %}
+        <a class="green-link" href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>,
+      {% endfor %}
+      </p>
+    </div>
+  </div>
 </div>
 {% endblock %}
