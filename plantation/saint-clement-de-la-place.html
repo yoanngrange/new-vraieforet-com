@@ -196,13 +196,14 @@
     <div class="col">
       <h1>Plantation à Saint-Clément-de-la-Place, 49</h1>
       <h2>Forêt, micro-forêt, bosquet, haie bocagère ou verger</h2>
-
+      <p id="rand"></p>
       <script>  
       let myArray = ["Vous cherchez un partenaire pour une plantation forestière à Saint-Clément-de-la-Place, planter une haie bocagère, répondre à une obligation DREAL de replanter...", "Vous cherchez une entreprise de plantation forestière pour vous accompagner dans votre projet de plantation forestière, pour planter une haie bocagère, creuser une mare...", "Vous souhaitez déléguer la plantation d'une forêt, d'une haie bocagère ou d'un verger..."];
       let randomValue = myArray[Math.floor(Math.random() * myArray.length)];
       document.write(randomValue);
+      document.getElementById('rand').innerHTML = randomValue;
       </script>
-      <p id="rand"></p>
+      
       <!--<p>
         Découvrez les essences que nous vous recommandons par rapport à votre sol.
         <a class="green-link" href="/essences">Voir les essences d'arbres &raquo;</a>
