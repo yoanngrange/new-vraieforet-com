@@ -4,22 +4,15 @@
 {% block content %}
 <div class="container">
   <h1>{{service.name}}</h1>
-  {% if service.image %}
-  <img
-    class="img-fluid"
-    src="{{service.image.thumbnails.large.url}}"
-    loading="lazy"
-  />
-  {% endif %}
-  {% if service.header %}
-  <div>
-    {% markdown %}
-    {{service.header}}
-    {% endmarkdown %}
-  </div>
-  {% endif %}
   <div class="row g-5">
-    <div class="col-md-4">
+    <div class="col-md-3">
+      {% if service.header %}
+        {% markdown %}
+        {{service.header}}
+        {% endmarkdown %}
+      {% endif %}
+    </div>
+    <div class="col-md-9">
       {% if service.image %}
       <img
         class="img-fluid"
@@ -28,7 +21,20 @@
       />
       {% endif %}
     </div>
-    <div class="col-md-8">
+  </div>
+  <div class="row g-5">
+    <div class="col-md-5">
+      {% if service.image %}
+      {% for photo in service.image %}
+      <img
+      class="img-fluid"
+      src="{{photo.image.thumbnails.small.url}}"
+      loading="lazy"
+      />
+      {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-md-7">
       {% if service.text %}
       <div>
         {% markdown %}
