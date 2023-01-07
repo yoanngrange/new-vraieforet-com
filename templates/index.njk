@@ -98,7 +98,6 @@
             <h3 class="card-title">{{realisation.name}}</h3>
             <div class="card-text">
               <p><span class="badge small target-label">{{realisation.department}}</span></p>
-              <button type="button" class="text-center btn btn-success btn-sm">Contexte &amp; témoignage client &raquo;</button>
             </div>
           </div>
         </div>
@@ -106,14 +105,6 @@
     </div>
     {% endfor %}
   </div>
-  <br />
-  <div class="row">
-    <div class="col">
-      <p class="text-center">
-        <a class="btn btn-lg btn-success" href="/realisations">Voir plus de réalisations &raquo;</a>
-      </p>
-    </div>
-  </div>  
 
   <br />
   <hr class="seperator" />
@@ -172,7 +163,7 @@
   <br>
   <br>
 
-  <p>Les 3 derniers articles du <a class="green-link" href="/blog/">blog</a></p>
+  <!--<p>Les 3 derniers articles du <a class="green-link" href="/blog/">blog</a></p>
   <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
     {% for actualite in actualites %}
     <a class="card-link" href="/blog/{{actualite.slug}}.html">
@@ -207,7 +198,7 @@
     <p class="text-center">
       <a  class="btn btn-lg btn-success" href="/blog/">Fouiner dans le blog comme en blaireau en forêt &raquo;</a>
     </p>
-  </div>    
+  </div>-->
 
 </div>
 {% endblock %}
