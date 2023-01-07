@@ -1,135 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Plantation de forêt, micro-forêt et haie bocagère">
-		<meta name="twitter:description" content="Nous plantons des écosystèmes forestiers denses, durables et pleins de vie.">
-		<meta name="twitter:image" content="https://www.vraieforet.com/img/card-min.jpg">
-		<meta name="twitter:site" content="@vraieforet" />
-		<meta property="og:title" content="Plantation de forêt, micro-forêt et haie bocagère">
-		<meta property="og:type" content="article" />
-		<meta property="og:image" content="https://www.vraieforet.com/img/card-min.jpg">
-		<meta property="og:url" content="https://www.vraieforet.com/index.html">
-		<meta property="og:description" content="Nous plantons des écosystèmes forestiers denses, durables et pleins de vie.">
-		<meta property="og:site_name" content="VraieForet.com">
-		<link rel="canonical" href="https://www.vraieforet.com" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <style>
-
-      .home, .txt-grey {
-        color: #666;
-      }
-
-      .home h3 {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Plantation de forêt, micro-forêt et haie bocagère">
+  <meta name="twitter:description" content="Nous plantons des écosystèmes forestiers denses, durables et pleins de vie.">
+  <meta name="twitter:image" content="https://www.vraieforet.com/img/card-min.jpg">
+  <meta name="twitter:site" content="@vraieforet" />
+  <meta property="og:title" content="Plantation de forêt, micro-forêt et haie bocagère">
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.vraieforet.com/img/card-min.jpg">
+  <meta property="og:url" content="https://www.vraieforet.com/index.html">
+  <meta property="og:description" content="Nous plantons des écosystèmes forestiers denses, durables et pleins de vie.">
+  <meta property="og:site_name" content="VraieForet.com">
+  <link rel="canonical" href="https://www.vraieforet.com" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+    .home, .txt-grey {
+     color: #666;
+    }
+    .home h3 {
         font-size: 1.15rem;
         font-weight: 800;
         color: rgb(62, 126, 81);
-      }
-
-      .bg-vf {color: #FFF; background-color: rgb(62, 126, 81);}
-
-      hr.separator {margin: 4rem 0;}
-
-      span.target-label {color: #FFF; background-color: #CCC; font-size:0.75rem; font-weight: 300; font-style: italic;}
-
-      .main-block {margin-top: 3rem;}
-      
-      .card {border: none;}
-      .card-body {padding: 1rem 0;}
-      .card-link {text-decoration: none; color: #000;}
-
-      .green-link {
-        color: rgb(62, 126, 81);
-      }
-
-      .green-link:hover,
-      .green-link:active,
-      .green-link:focus {
-        color: rgb(96, 202, 126);
-      }
-
-      .bg-green {
-        background-color: rgb(62, 126, 81);
-      }
-
-      .bg-green h2.white, .bg-green p.white {
+    }
+    .bg-vf {
         color: #FFF;
-      }
-
-      .lg-padd {
+        background-color: rgb(62, 126, 81);
+    }
+    hr.separator {
+        margin: 4rem 0;
+    }
+    span.target-label {
+        color: #FFF;
+        background-color: #CCC;
+        font-size:0.75rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+    .main-block {
+        margin-top: 3rem;
+    }
+    .card {
+        border: none;
+    }
+    .card-body {
+        padding: 1rem 0;
+    }
+    .card-link {
+        text-decoration: none;
+        color: #000;
+    }
+    .green-link {
+        color: rgb(62, 126, 81);
+    }
+    .green-link:hover, .green-link:active, .green-link:focus {
+        color: rgb(96, 202, 126);
+    }
+    .bg-green {
+        background-color: rgb(62, 126, 81);
+    }
+    .bg-green h2.white, .bg-green p.white {
+        color: #FFF;
+    }
+    .lg-padd {
         padding-top: 3rem;
         padding-bottom: 8rem;
-      }
-
-      .accordion-button:not(.collapsed) {
+    }
+    .accordion-button:not(.collapsed) {
         color: #666;
         background-color: rgba(62, 126, 81, 0.3);
-      }
-
-      a.green-link {
+    }
+    a.green-link {
         color: rgb(138, 151, 142);
-      }
-
-      a.green-link:hover, a.green-link:active {
+    }
+    a.green-link:hover, a.green-link:active {
         color: rgb(96, 202, 126);
-      }
-
-      .contact .grey-link {color: #666;}
-
-      a.white {
+    }
+    .contact .grey-link {
+        color: #666;
+    }
+    a.white {
         color: #FFF;
         text-decoration: none;
-      }
-
-      a.white:hover, a.white:active {
+    }
+    a.white:hover, a.white:active {
         color: #CCC;
         text-decoration: underline;
-      }
-
-      .btn-success {
+    }
+    .btn-success {
         background-color: rgb(62, 126, 81);
         border: none;
-      }
-
-      .btn-success:hover,
-      .btn-success:active,
-      .btn-success:focus {
+    }
+    .btn-success:hover, .btn-success:active, .btn-success:focus {
         background-color: rgb(96, 202, 126);
-      }
-
-      .strike {
+    }
+    .strike {
         text-decoration: line-through;
-      }
-
-      a.anchor {
+    }
+    a.anchor {
         display: block;
         position: relative;
         top: -125px;
         visibility: hidden;
-      }
-
-      .realisations .blockquote {
+    }
+    .realisations .blockquote {
         font-family: 'Noto Serif', serif;
         font-weight: 400;
         font-size: 0.9rem;
-      }
-
-      .realisations .blockquote-footer {
+    }
+    .realisations .blockquote-footer {
         margin-top: 0.5rem;
-      }
-
-      .realisations .citation {
+    }
+    .realisations .citation {
         font-size: 1.2rem;
         font-weight: 700;
         line-height: 1;
-      }
-
-      .v-small {font-size: 0.8rem;}
-      
-      
+    }
+    .v-small {
+        font-size: 0.8rem;
+    }
     </style>
     <title>
       
@@ -231,7 +223,7 @@
     </div>
 
     <!--FOOTER-->
-<div class="main-block lg-padd">
+<!--<div class="main-block lg-padd">
   <div class="container partners text-center">
     <h2>Partenaires</h2>
     <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 txt-grey">
@@ -245,7 +237,7 @@
       </div>      
     </div>
   </div>
-</div>
+</div>-->
 
 <div class="main-block bg-vf lg-padd">
   <div class="container contact text-center">
