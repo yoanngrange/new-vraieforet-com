@@ -11,6 +11,17 @@
         {{service.header}}
         {% endmarkdown %}
       {% endif %}
+      {% if service.images %}
+        {% for image in service.images %}
+        <img
+        class="img-fluid img-full"
+        src="{{image.thumbnails.large.url}}"
+        loading="lazy"
+        />
+        <br />
+        <br />
+        {% endfor %}
+      {% endif %}
     </div>
     <div class="col-md-8">
       {% if service.thumb %}
@@ -20,22 +31,6 @@
         loading="lazy"
       />
       {% endif %}
-    </div>
-  </div>
-  <div class="row g-5">
-    <div class="col-md-4">
-      {% if service.images %}
-        {% for image in service.images %}
-        <img
-        class="img-fluid img-full"
-        src="{{image.thumbnails.large.url}}"
-        loading="lazy"
-        />
-        <br />
-        {% endfor %}
-      {% endif %}
-    </div>
-    <div class="col-md-8">
       {% if service.text %}
         {% markdown %}
         {{service.text}}
@@ -44,10 +39,10 @@
     </div>
   </div>
   
-  <p>
+  <!--<p>
     {% for target in service.targets %}
     <span>{{target}}</span>{{ "," if not loop.last }}
     {% endfor %}
-  </p>
+  </p>-->
 </div>
 {% endblock %}
