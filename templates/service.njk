@@ -25,10 +25,10 @@
   <div class="row g-5">
     <div class="col-md-4">
       {% if service.image %}
-        {% for photo in service.image %}
+        {% for image in service.images %}
         <img
         class="img-fluid"
-        src="{{photo.image.thumbnails.small.url}}"
+        src="{{image.images.thumbnails.small.url}}"
         loading="lazy"
         />
         {% endfor %}

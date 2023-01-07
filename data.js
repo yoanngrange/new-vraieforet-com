@@ -163,7 +163,7 @@ function servicesMapper(record) {
     slug: record.get("Slug"),
     header: record.get("Header"),
     text: record.get("Text"),
-    image: record.get("Image") && record.get("Image"),
+    images: record.get("Image"),
     thumb: record.get("ImageThumb") && record.get("ImageThumb")[0],
     targets: record.get("Targets"),
   };
