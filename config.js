@@ -93,7 +93,7 @@ export const files = [
   },
   {
     templateFile: "communes.njk",
-    distFile: "plantation/index.html",
+    distFile: "plantation-arbres/index.html",
     meta: () => ({
       title: "Plantation d'arbres en Loire-Atlantique, en Maine et Loire et en Vendée",
       description: "Vous souhaitez planter une forêt, une micro-forêt, une haie bocagère / champêtre ou encore un verger ? Contactez Vraie Forêt et visitons ensemble la parcelle de votre projet.",
