@@ -76,9 +76,11 @@ export const files = [
   },
   {
     templateFile: "commune.njk",
-    distFile: (slug) => `plantation/${slug}.html`,
+    distFile: (slug) => `plantation-arbres/${department}-${slug}.html`,
     meta: (commune) => ({
-      title: "Plantation forestières à ".commune,
+      title: "Plantation arbres à ".commune." dans le ".department,
+      description: "Vous souhaitez planter ou faire planter à ".commune." ? Contactez Vraie Forêt.",
+      keywords: "plantation commune, plantation ville, plantation municipalité, plantation forestière ".commune,
     }),
     multiPages: true,
     datasource: {
@@ -95,7 +97,7 @@ export const files = [
     meta: () => ({
       title: "Plantation d'arbres en Loire-Atlantique, en Maine et Loire et en Vendée",
       description: "Vous souhaitez planter une forêt, une micro-forêt, une haie bocagère / champêtre ou encore un verger ? Contactez Vraie Forêt et visitons ensemble la parcelle de votre projet.",
-      keywords: "plantation commune, plantation ville, plantation municipalité, plantation forestière".commune,
+      keywords: "plantation arbre commune, plantation foret ville, plantation haie municipalité, plantation forestière, plantation",
     }),
     datasource: {
       loireAtlantique: communes.withConstraints({

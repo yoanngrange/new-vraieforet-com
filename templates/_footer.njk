@@ -69,7 +69,7 @@
     {% if footerCommunes %}
     <p class="white text-center v-small">
       {% for commune in footerCommunes %}
-      <a class="white" href="/plantation/{{commune.slug}}.html">{{commune.name}}</a>{{ "," if not loop.last }}
+      <a class="white" href="/plantation-arbres/{{commune.department}}-{{commune.slug}}.html">{{commune.name}}</a>{{ "," if not loop.last }}
       {% endfor %}
     </p>
     {% endif %}
