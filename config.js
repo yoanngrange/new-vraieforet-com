@@ -76,9 +76,9 @@ export const files = [
   },
   {
     templateFile: "commune.njk",
-    distFile: (department, slug) => `plantation-arbres/${department}-${slug}.html`,
+    distFile: (slug) => `plantation-arbres/${slug}.html`,
     meta: (commune) => ({
-      title: `Plantation arbres à ${commune} dans le ${department}`,
+      title: `Plantation arbres à ${commune}`,
       description: `Vous souhaitez planter ou faire planter à ${commune} ? Contactez Vraie Forêt.`,
       keywords: `plantation commune, plantation ville, plantation municipalité, plantation forestière ${commune}`,
     }),
